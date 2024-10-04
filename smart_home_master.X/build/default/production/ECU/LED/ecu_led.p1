@@ -1,16 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"89 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 89: void PIN_MANAGER_Initialize (void);
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"83 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 83: void OSCILLATOR_Initialize(void);
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"6455 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 6455: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
-[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"3072
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3072: extern volatile unsigned char OSCTUNE __attribute__((address(0xF9B)));
-[v _OSCTUNE `Vuc ~T0 @X0 0 e@3995 ]
+"38 ECU/LED/ecu_led.h
+[; ;ECU/LED/ecu_led.h: 38: {
+[s S307 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S307 . port_name pin_name led_state ]
+"87 ECU/LED/../../HAL/GPIO/hal_gpio.h
+[; ;ECU/LED/../../HAL/GPIO/hal_gpio.h: 87: {
+[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S306 . Pin Port Logic Direction ]
+"34 ECU/LED/ecu_led.c
+[; ;ECU/LED/ecu_led.c: 34:         pin_obj.Direction = GPIO_OUTPUT;
+[c E3236 0 1 .. ]
+[n E3236 . GPIO_OUTPUT GPIO_INPUT  ]
+"107 ECU/LED/../../HAL/GPIO/hal_gpio.h
+[; ;ECU/LED/../../HAL/GPIO/hal_gpio.h: 107: Std_ReturnType gpio_pin_initialize(const pin_config_t* pin_config);
+[v _gpio_pin_initialize `(uc ~T0 @X0 0 ef1`*CS306 ]
+"68 ECU/LED/ecu_led.c
+[; ;ECU/LED/ecu_led.c: 68:         ret = gpio_pin_write_logic(&pin_obj,GPIO_HIGH);
+[c E3232 0 1 .. ]
+[n E3232 . GPIO_LOW GPIO_HIGH  ]
+"104 ECU/LED/../../HAL/GPIO/hal_gpio.h
+[; ;ECU/LED/../../HAL/GPIO/hal_gpio.h: 104: Std_ReturnType gpio_pin_write_logic(const pin_config_t* pin_config, logic_t logic);
+[v _gpio_pin_write_logic `(uc ~T0 @X0 0 ef2`*CS306`E3232 ]
+"106
+[; ;ECU/LED/../../HAL/GPIO/hal_gpio.h: 106: Std_ReturnType gpio_pin_toggle_logic(const pin_config_t* pin_config);
+[v _gpio_pin_toggle_logic `(uc ~T0 @X0 0 ef1`*CS306 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -452,39 +465,267 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"50 mcc_generated_files/mcc.c
-[; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
-"51
-[; ;mcc_generated_files/mcc.c: 51: {
+"20 ECU/LED/ecu_led.c
+[; ;ECU/LED/ecu_led.c: 20: Std_ReturnType led_initialize(const led_t *led)
+[v _led_initialize `(uc ~T0 @X0 1 ef1`*CS307 ]
+"21
+[; ;ECU/LED/ecu_led.c: 21: {
 {
-[e :U _SYSTEM_Initialize ]
+[e :U _led_initialize ]
+"20
+[; ;ECU/LED/ecu_led.c: 20: Std_ReturnType led_initialize(const led_t *led)
+[v _led `*CS307 ~T0 @X0 1 r1 ]
+"21
+[; ;ECU/LED/ecu_led.c: 21: {
+[f ]
+"22
+[; ;ECU/LED/ecu_led.c: 22:     Std_ReturnType ret = (Std_ReturnType)0X01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"24
+[; ;ECU/LED/ecu_led.c: 24:     if(((void*)0) == led)
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 309  ]
+"25
+[; ;ECU/LED/ecu_led.c: 25:     {
+{
+"26
+[; ;ECU/LED/ecu_led.c: 26:         ret = (Std_ReturnType)0X00;
+[e = _ret -> -> 0 `i `uc ]
+"27
+[; ;ECU/LED/ecu_led.c: 27:     }
+}
+[e $U 310  ]
+"28
+[; ;ECU/LED/ecu_led.c: 28:     else
+[e :U 309 ]
+"29
+[; ;ECU/LED/ecu_led.c: 29:     {
+{
+"30
+[; ;ECU/LED/ecu_led.c: 30:         pin_config_t pin_obj;
+[v _pin_obj `S306 ~T0 @X0 1 a ]
+"31
+[; ;ECU/LED/ecu_led.c: 31:         pin_obj.Port = led->port_name;
+[e = . _pin_obj 1 . *U _led 0 ]
+"32
+[; ;ECU/LED/ecu_led.c: 32:         pin_obj.Pin = led->pin_name;
+[e = . _pin_obj 0 . *U _led 1 ]
+"33
+[; ;ECU/LED/ecu_led.c: 33:         pin_obj.Logic = led->led_state;
+[e = . _pin_obj 2 . *U _led 2 ]
+"34
+[; ;ECU/LED/ecu_led.c: 34:         pin_obj.Direction = GPIO_OUTPUT;
+[e = . _pin_obj 3 -> . `E3236 0 `uc ]
+"36
+[; ;ECU/LED/ecu_led.c: 36:         ret = gpio_pin_initialize(&pin_obj);
+[e = _ret ( _gpio_pin_initialize (1 -> &U _pin_obj `*CS306 ]
+"37
+[; ;ECU/LED/ecu_led.c: 37:     }
+}
+[e :U 310 ]
+"39
+[; ;ECU/LED/ecu_led.c: 39:     return ret;
+[e ) _ret ]
+[e $UE 308  ]
+"42
+[; ;ECU/LED/ecu_led.c: 42: }
+[e :UE 308 ]
+}
+"51
+[; ;ECU/LED/ecu_led.c: 51: Std_ReturnType led_on(const led_t *led)
+[v _led_on `(uc ~T0 @X0 1 ef1`*CS307 ]
+"52
+[; ;ECU/LED/ecu_led.c: 52: {
+{
+[e :U _led_on ]
+"51
+[; ;ECU/LED/ecu_led.c: 51: Std_ReturnType led_on(const led_t *led)
+[v _led `*CS307 ~T0 @X0 1 r1 ]
+"52
+[; ;ECU/LED/ecu_led.c: 52: {
 [f ]
 "53
-[; ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
-[e ( _PIN_MANAGER_Initialize ..  ]
-"54
-[; ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
-"55
-[; ;mcc_generated_files/mcc.c: 55: }
-[e :UE 305 ]
-}
+[; ;ECU/LED/ecu_led.c: 53:     Std_ReturnType ret = (Std_ReturnType)0X01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"56
+[; ;ECU/LED/ecu_led.c: 56:     if(((void*)0) == led)
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 312  ]
 "57
-[; ;mcc_generated_files/mcc.c: 57: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"58
-[; ;mcc_generated_files/mcc.c: 58: {
+[; ;ECU/LED/ecu_led.c: 57:     {
 {
-[e :U _OSCILLATOR_Initialize ]
-[f ]
+"58
+[; ;ECU/LED/ecu_led.c: 58:         ret = (Std_ReturnType)0X00;
+[e = _ret -> -> 0 `i `uc ]
+"59
+[; ;ECU/LED/ecu_led.c: 59:     }
+}
+[e $U 313  ]
 "60
-[; ;mcc_generated_files/mcc.c: 60:     OSCCON = 0x30;
-[e = _OSCCON -> -> 48 `i `uc ]
+[; ;ECU/LED/ecu_led.c: 60:     else
+[e :U 312 ]
+"61
+[; ;ECU/LED/ecu_led.c: 61:     {
+{
 "62
-[; ;mcc_generated_files/mcc.c: 62:     OSCTUNE = 0x00;
-[e = _OSCTUNE -> -> 0 `i `uc ]
+[; ;ECU/LED/ecu_led.c: 62:         pin_config_t pin_obj;
+[v _pin_obj `S306 ~T0 @X0 1 a ]
 "63
-[; ;mcc_generated_files/mcc.c: 63: }
-[e :UE 306 ]
+[; ;ECU/LED/ecu_led.c: 63:         pin_obj.Port = led->port_name;
+[e = . _pin_obj 1 . *U _led 0 ]
+"64
+[; ;ECU/LED/ecu_led.c: 64:         pin_obj.Pin = led->pin_name;
+[e = . _pin_obj 0 . *U _led 1 ]
+"65
+[; ;ECU/LED/ecu_led.c: 65:         pin_obj.Logic = led->led_state;
+[e = . _pin_obj 2 . *U _led 2 ]
+"66
+[; ;ECU/LED/ecu_led.c: 66:         pin_obj.Direction = GPIO_OUTPUT;
+[e = . _pin_obj 3 -> . `E3236 0 `uc ]
+"68
+[; ;ECU/LED/ecu_led.c: 68:         ret = gpio_pin_write_logic(&pin_obj,GPIO_HIGH);
+[e = _ret ( _gpio_pin_write_logic (2 , -> &U _pin_obj `*CS306 . `E3232 1 ]
+"71
+[; ;ECU/LED/ecu_led.c: 71:     }
+}
+[e :U 313 ]
+"73
+[; ;ECU/LED/ecu_led.c: 73:     return ret;
+[e ) _ret ]
+[e $UE 311  ]
+"75
+[; ;ECU/LED/ecu_led.c: 75: }
+[e :UE 311 ]
+}
+"84
+[; ;ECU/LED/ecu_led.c: 84: Std_ReturnType led_off(const led_t *led)
+[v _led_off `(uc ~T0 @X0 1 ef1`*CS307 ]
+"85
+[; ;ECU/LED/ecu_led.c: 85: {
+{
+[e :U _led_off ]
+"84
+[; ;ECU/LED/ecu_led.c: 84: Std_ReturnType led_off(const led_t *led)
+[v _led `*CS307 ~T0 @X0 1 r1 ]
+"85
+[; ;ECU/LED/ecu_led.c: 85: {
+[f ]
+"86
+[; ;ECU/LED/ecu_led.c: 86:     Std_ReturnType ret = (Std_ReturnType)0X01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"88
+[; ;ECU/LED/ecu_led.c: 88:     if(((void*)0) == led)
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 315  ]
+"89
+[; ;ECU/LED/ecu_led.c: 89:     {
+{
+"90
+[; ;ECU/LED/ecu_led.c: 90:         ret = (Std_ReturnType)0X00;
+[e = _ret -> -> 0 `i `uc ]
+"91
+[; ;ECU/LED/ecu_led.c: 91:     }
+}
+[e $U 316  ]
+"92
+[; ;ECU/LED/ecu_led.c: 92:     else
+[e :U 315 ]
+"93
+[; ;ECU/LED/ecu_led.c: 93:     {
+{
+"94
+[; ;ECU/LED/ecu_led.c: 94:         pin_config_t pin_obj;
+[v _pin_obj `S306 ~T0 @X0 1 a ]
+"95
+[; ;ECU/LED/ecu_led.c: 95:         pin_obj.Port = led->port_name;
+[e = . _pin_obj 1 . *U _led 0 ]
+"96
+[; ;ECU/LED/ecu_led.c: 96:         pin_obj.Pin = led->pin_name;
+[e = . _pin_obj 0 . *U _led 1 ]
+"97
+[; ;ECU/LED/ecu_led.c: 97:         pin_obj.Logic = led->led_state;
+[e = . _pin_obj 2 . *U _led 2 ]
+"98
+[; ;ECU/LED/ecu_led.c: 98:         pin_obj.Direction = GPIO_OUTPUT;
+[e = . _pin_obj 3 -> . `E3236 0 `uc ]
+"100
+[; ;ECU/LED/ecu_led.c: 100:         ret = gpio_pin_write_logic(&pin_obj, GPIO_LOW);
+[e = _ret ( _gpio_pin_write_logic (2 , -> &U _pin_obj `*CS306 . `E3232 0 ]
+"101
+[; ;ECU/LED/ecu_led.c: 101:     }
+}
+[e :U 316 ]
+"103
+[; ;ECU/LED/ecu_led.c: 103:     return ret;
+[e ) _ret ]
+[e $UE 314  ]
+"104
+[; ;ECU/LED/ecu_led.c: 104: }
+[e :UE 314 ]
+}
+"113
+[; ;ECU/LED/ecu_led.c: 113: Std_ReturnType led_toggle(const led_t *led)
+[v _led_toggle `(uc ~T0 @X0 1 ef1`*CS307 ]
+"114
+[; ;ECU/LED/ecu_led.c: 114: {
+{
+[e :U _led_toggle ]
+"113
+[; ;ECU/LED/ecu_led.c: 113: Std_ReturnType led_toggle(const led_t *led)
+[v _led `*CS307 ~T0 @X0 1 r1 ]
+"114
+[; ;ECU/LED/ecu_led.c: 114: {
+[f ]
+"115
+[; ;ECU/LED/ecu_led.c: 115:     Std_ReturnType ret = (Std_ReturnType)0X01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"117
+[; ;ECU/LED/ecu_led.c: 117:     if(((void*)0) == led)
+[e $ ! == -> -> -> 0 `i `*v `*CS307 _led 318  ]
+"118
+[; ;ECU/LED/ecu_led.c: 118:     {
+{
+"119
+[; ;ECU/LED/ecu_led.c: 119:         ret = (Std_ReturnType)0X00;
+[e = _ret -> -> 0 `i `uc ]
+"120
+[; ;ECU/LED/ecu_led.c: 120:     }
+}
+[e $U 319  ]
+"121
+[; ;ECU/LED/ecu_led.c: 121:     else
+[e :U 318 ]
+"122
+[; ;ECU/LED/ecu_led.c: 122:     {
+{
+"123
+[; ;ECU/LED/ecu_led.c: 123:         pin_config_t pin_obj;
+[v _pin_obj `S306 ~T0 @X0 1 a ]
+"124
+[; ;ECU/LED/ecu_led.c: 124:         pin_obj.Port = led->port_name;
+[e = . _pin_obj 1 . *U _led 0 ]
+"125
+[; ;ECU/LED/ecu_led.c: 125:         pin_obj.Pin = led->pin_name;
+[e = . _pin_obj 0 . *U _led 1 ]
+"126
+[; ;ECU/LED/ecu_led.c: 126:         pin_obj.Logic = led->led_state;
+[e = . _pin_obj 2 . *U _led 2 ]
+"127
+[; ;ECU/LED/ecu_led.c: 127:         pin_obj.Direction = GPIO_OUTPUT;
+[e = . _pin_obj 3 -> . `E3236 0 `uc ]
+"129
+[; ;ECU/LED/ecu_led.c: 129:         ret = gpio_pin_toggle_logic(&pin_obj);
+[e = _ret ( _gpio_pin_toggle_logic (1 -> &U _pin_obj `*CS306 ]
+"130
+[; ;ECU/LED/ecu_led.c: 130:     }
+}
+[e :U 319 ]
+"132
+[; ;ECU/LED/ecu_led.c: 132:     return ret;
+[e ) _ret ]
+[e $UE 317  ]
+"133
+[; ;ECU/LED/ecu_led.c: 133: }
+[e :UE 317 ]
 }

@@ -1,41 +1,76 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"87 ./ECU/LCD/../../HAL/GPIO/hal_gpio.h
+"38 ./ECU/LED/ecu_led.h
+[; ;./ECU/LED/ecu_led.h: 38: {
+[s S310 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S310 . port_name pin_name led_state ]
+"3 main.c
+[; ;main.c: 3: led_t led_1 = {.port_name = PORTA_INDEX, .pin_name =PIN0, .led_state = LED_OFF};
+[c E3273 0 1 2 3 4 .. ]
+[n E3273 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E3263 0 1 2 3 4 5 6 7 .. ]
+[n E3263 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
+[c E3407 0 1 .. ]
+[n E3407 . LED_OFF LED_ON  ]
+"87 ./ECU/LED/../../HAL/GPIO/hal_gpio.h
 [s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S306 . Pin Port Logic Direction ]
 "69 ./ECU/LCD/ecu_chr_lcd.h
 [; ;./ECU/LCD/ecu_chr_lcd.h: 69: {
 [s S308 `S306 -> 4 `i `S306 1 `S306 1 ]
 [n S308 . lcd_data lcd_rs lcd_en ]
-"3 main.c
-[; ;main.c: 3: chr_lcd_4bit_t lcd1 = {
-[c E3244 0 1 2 3 4 5 6 7 .. ]
-[n E3244 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
-[c E3254 0 1 2 3 4 .. ]
-[n E3254 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E3236 0 1 .. ]
-[n E3236 . GPIO_LOW GPIO_HIGH  ]
-[c E3240 0 1 .. ]
-[n E3240 . GPIO_OUTPUT GPIO_INPUT  ]
+"5 main.c
+[; ;main.c: 5: chr_lcd_4bit_t lcd1 = {
+[c E3255 0 1 .. ]
+[n E3255 . GPIO_LOW GPIO_HIGH  ]
+[c E3259 0 1 .. ]
+[n E3259 . GPIO_OUTPUT GPIO_INPUT  ]
 "35 ./ECU/KEYPAD/ecu_keypad.h
 [; ;./ECU/KEYPAD/ecu_keypad.h: 35: {
 [s S307 `S306 -> 4 `i `S306 -> 4 `i ]
 [n S307 . keypad_row_pins keypad_col_pins ]
 [p mainexit ]
-"69 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
+"249 ./mcc_generated_files/memory.h
+[; ;./mcc_generated_files/memory.h: 249: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+[v _DATAEE_WriteByte `(v ~T0 @X0 0 ef2`us`uc ]
+"70 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 70: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"18 ./main.h
-[; ;./main.h: 18: void APP_Init(void);
+"20 ./main.h
+[; ;./main.h: 20: void APP_Init(void);
 [v _APP_Init `(v ~T0 @X0 0 ef ]
-"19
-[; ;./main.h: 19: void Welcom(void);
+"21
+[; ;./main.h: 21: void Welcom(void);
 [v _Welcom `(v ~T0 @X0 0 ef ]
+"275 ./mcc_generated_files/memory.h
+[; ;./mcc_generated_files/memory.h: 275: uint8_t DATAEE_ReadByte(uint16_t bAdd);
+[v _DATAEE_ReadByte `(uc ~T0 @X0 0 ef1`us ]
+"22 ./main.h
+[; ;./main.h: 22: uint16 Set_Password(void);
+[v _Set_Password `(us ~T0 @X0 0 ef ]
+"23
+[; ;./main.h: 23: uint16 Read_Password_EEPROM(void);
+[v _Read_Password_EEPROM `(us ~T0 @X0 0 ef ]
+"91 ./ECU/LCD/ecu_chr_lcd.h
+[; ;./ECU/LCD/ecu_chr_lcd.h: 91: Std_ReturnType lcd_4bit_send_command(const chr_lcd_4bit_t* lcd, uint8 command);
+[v _lcd_4bit_send_command `(uc ~T0 @X0 0 ef2`*CS308`uc ]
+"115
+[; ;./ECU/LCD/ecu_chr_lcd.h: 115: Std_ReturnType convert_uint16_to_string(uint16 value, uint8* str);
+[v _convert_uint16_to_string `(uc ~T0 @X0 0 ef2`us`*uc ]
+"95
+[; ;./ECU/LCD/ecu_chr_lcd.h: 95: Std_ReturnType lcd_4bit_send_string_data_pos(const chr_lcd_4bit_t* lcd, uint8 row, uint8 coulmn, uint8* str_data);
+[v _lcd_4bit_send_string_data_pos `(uc ~T0 @X0 0 ef4`*CS308`uc`uc`*uc ]
+"51 ./ECU/LED/ecu_led.h
+[; ;./ECU/LED/ecu_led.h: 51: Std_ReturnType led_on(const led_t *led);
+[v _led_on `(uc ~T0 @X0 0 ef1`*CS310 ]
 "90 ./ECU/LCD/ecu_chr_lcd.h
 [; ;./ECU/LCD/ecu_chr_lcd.h: 90: Std_ReturnType lcd_4bit_initialze(const chr_lcd_4bit_t* lcd);
 [v _lcd_4bit_initialze `(uc ~T0 @X0 0 ef1`*CS308 ]
 "44 ./ECU/KEYPAD/ecu_keypad.h
 [; ;./ECU/KEYPAD/ecu_keypad.h: 44: Std_ReturnType keypad_initialize(const keypad_t* obj);
 [v _keypad_initialize `(uc ~T0 @X0 0 ef1`*CS307 ]
+"49 ./ECU/LED/ecu_led.h
+[; ;./ECU/LED/ecu_led.h: 49: Std_ReturnType led_initialize(const led_t *led);
+[v _led_initialize `(uc ~T0 @X0 0 ef1`*CS310 ]
 "94 ./ECU/LCD/ecu_chr_lcd.h
 [; ;./ECU/LCD/ecu_chr_lcd.h: 94: Std_ReturnType lcd_4bit_send_string_data(const chr_lcd_4bit_t* lcd, uint8* str_data);
 [v _lcd_4bit_send_string_data `(uc ~T0 @X0 0 ef2`*CS308`*uc ]
@@ -43,9 +78,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 C:\Program Files\Microchip\xc8\v2.45\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"91 ./ECU/LCD/ecu_chr_lcd.h
-[; ;./ECU/LCD/ecu_chr_lcd.h: 91: Std_ReturnType lcd_4bit_send_command(const chr_lcd_4bit_t* lcd, uint8 command);
-[v _lcd_4bit_send_command `(uc ~T0 @X0 0 ef2`*CS308`uc ]
+"46 ./ECU/KEYPAD/ecu_keypad.h
+[; ;./ECU/KEYPAD/ecu_keypad.h: 46: Std_ReturnType keypad_get_value(const keypad_t* obj, uint8* value);
+[v _keypad_get_value `(uc ~T0 @X0 0 ef2`*CS307`*uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -488,247 +523,480 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "3 main.c
-[; ;main.c: 3: chr_lcd_4bit_t lcd1 = {
+[; ;main.c: 3: led_t led_1 = {.port_name = PORTA_INDEX, .pin_name =PIN0, .led_state = LED_OFF};
+[v _led_1 `S310 ~T0 @X0 1 e ]
+[i _led_1
+:U ..
+:U ..
+-> . `E3273 0 `uc
+-> . `E3263 0 `uc
+-> . `E3407 0 `uc
+..
+..
+]
+"5
+[; ;main.c: 5: chr_lcd_4bit_t lcd1 = {
 [v _lcd1 `S308 ~T0 @X0 1 e ]
 [i _lcd1
 :U ..
 :U ..
 :U ..
 :U ..
--> . `E3244 2 `uc
--> . `E3254 3 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
+-> . `E3263 2 `uc
+-> . `E3273 3 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
 ..
 :U ..
--> . `E3244 3 `uc
--> . `E3254 3 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
+-> . `E3263 3 `uc
+-> . `E3273 3 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
 ..
 :U ..
--> . `E3244 4 `uc
--> . `E3254 3 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
+-> . `E3263 4 `uc
+-> . `E3273 3 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
 ..
 :U ..
--> . `E3244 5 `uc
--> . `E3254 3 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
-..
-..
-:U ..
-:U ..
--> . `E3244 0 `uc
--> . `E3254 3 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
+-> . `E3263 5 `uc
+-> . `E3273 3 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
 ..
 ..
 :U ..
 :U ..
--> . `E3244 1 `uc
--> . `E3254 3 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
+-> . `E3263 0 `uc
+-> . `E3273 3 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
+..
+..
+:U ..
+:U ..
+-> . `E3263 1 `uc
+-> . `E3273 3 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
 ..
 ..
 ..
 ..
 ]
-"34
-[; ;main.c: 34: keypad_t key1 = {
+"36
+[; ;main.c: 36: keypad_t key1 = {
 [v _key1 `S307 ~T0 @X0 1 e ]
 [i _key1
 :U ..
 :U ..
 :U ..
 :U ..
--> . `E3244 6 `uc
--> . `E3254 3 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
+-> . `E3263 6 `uc
+-> . `E3273 3 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
 ..
 :U ..
--> . `E3244 7 `uc
--> . `E3254 3 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
+-> . `E3263 7 `uc
+-> . `E3273 3 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
 ..
 :U ..
--> . `E3244 2 `uc
--> . `E3254 4 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
+-> . `E3263 0 `uc
+-> . `E3273 4 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
 ..
 :U ..
--> . `E3244 0 `uc
--> . `E3254 4 `uc
--> . `E3236 0 `uc
--> . `E3240 0 `uc
+-> . `E3263 1 `uc
+-> . `E3273 4 `uc
+-> . `E3255 0 `uc
+-> . `E3259 0 `uc
 ..
 ..
 :U ..
 :U ..
--> . `E3244 4 `uc
--> . `E3254 1 `uc
--> . `E3236 0 `uc
--> . `E3240 1 `uc
+-> . `E3263 0 `uc
+-> . `E3273 2 `uc
+-> . `E3255 0 `uc
+-> . `E3259 1 `uc
 ..
 :U ..
--> . `E3244 5 `uc
--> . `E3254 1 `uc
--> . `E3236 0 `uc
--> . `E3240 1 `uc
+-> . `E3263 5 `uc
+-> . `E3273 1 `uc
+-> . `E3255 0 `uc
+-> . `E3259 1 `uc
 ..
 :U ..
--> . `E3244 6 `uc
--> . `E3254 1 `uc
--> . `E3236 0 `uc
--> . `E3240 1 `uc
+-> . `E3263 6 `uc
+-> . `E3273 1 `uc
+-> . `E3255 0 `uc
+-> . `E3259 1 `uc
 ..
 :U ..
--> . `E3244 7 `uc
--> . `E3254 1 `uc
--> . `E3236 0 `uc
--> . `E3240 1 `uc
+-> . `E3263 7 `uc
+-> . `E3273 1 `uc
+-> . `E3255 0 `uc
+-> . `E3259 1 `uc
 ..
 ..
 ..
 ..
 ]
-"78
-[; ;main.c: 78: Std_ReturnType ret = (Std_ReturnType)0X00;
+"80
+[; ;main.c: 80: Std_ReturnType ret = (Std_ReturnType)0X00;
 [v _ret `uc ~T0 @X0 1 e ]
 [i _ret
 -> -> 0 `i `uc
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
 "82
-[; ;main.c: 82: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;main.c: 82: uint8 Program_Count = 0;
+[v _Program_Count `uc ~T0 @X0 1 e ]
+[i _Program_Count
+-> -> 0 `i `uc
+]
 "83
-[; ;main.c: 83: {
+[; ;main.c: 83: static uint16 Password = 0;
+[v _Password `us ~T0 @X0 1 s ]
+[i _Password
+-> -> 0 `i `us
+]
+"84
+[; ;main.c: 84: uint8 Password_text[6];
+[v _Password_text `uc ~T0 @X0 -> 6 `i e ]
+"85
+[; ;main.c: 85: uint8 Keypad_Value[4] = {77, 77, 77, 77};
+[v _Keypad_Value `uc ~T0 @X0 -> 4 `i e ]
+[i _Keypad_Value
+:U ..
+-> -> 77 `i `uc
+-> -> 77 `i `uc
+-> -> 77 `i `uc
+-> -> 77 `i `uc
+..
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"88
+[; ;main.c: 88: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"89
+[; ;main.c: 89: {
 {
 [e :U _main ]
 [f ]
-"85
-[; ;main.c: 85:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"86
-[; ;main.c: 86:     APP_Init();
-[e ( _APP_Init ..  ]
-"88
-[; ;main.c: 88:     Welcom();
-[e ( _Welcom ..  ]
 "90
-[; ;main.c: 90:     while (1)
-[e :U 312 ]
-"91
-[; ;main.c: 91:     {
-{
+[; ;main.c: 90:     DATAEE_WriteByte(0x0000, 0xFF);
+[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `us -> -> 255 `i `uc ]
+"92
+[; ;main.c: 92:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "93
-[; ;main.c: 93:     }
-}
-[e :U 311 ]
-[e $U 312  ]
-[e :U 313 ]
-"94
-[; ;main.c: 94: }
-[e :UE 310 ]
-}
+[; ;main.c: 93:     APP_Init();
+[e ( _APP_Init ..  ]
 "95
-[; ;main.c: 95: void APP_Init(void)
+[; ;main.c: 95:     Welcom();
+[e ( _Welcom ..  ]
+"97
+[; ;main.c: 97:     Program_Count = DATAEE_ReadByte(0x0000);
+[e = _Program_Count ( _DATAEE_ReadByte (1 -> -> 0 `i `us ]
+"99
+[; ;main.c: 99:     if (Program_Count == 0xFF)
+[e $ ! == -> _Program_Count `i -> 255 `i 312  ]
+"100
+[; ;main.c: 100:     {
+{
+"101
+[; ;main.c: 101:         Password = Set_Password();
+[e = _Password ( _Set_Password ..  ]
+"103
+[; ;main.c: 103:         DATAEE_WriteByte(0x0120, (uint8)Password);
+[e ( _DATAEE_WriteByte (2 , -> -> 288 `i `us -> _Password `uc ]
+"104
+[; ;main.c: 104:         DATAEE_WriteByte(0x0121, (uint8)( (Password >> 8) &0x0F));
+[e ( _DATAEE_WriteByte (2 , -> -> 289 `i `us -> & >> -> _Password `ui -> 8 `i -> -> 15 `i `ui `uc ]
+"105
+[; ;main.c: 105:         Program_Count = 1;
+[e = _Program_Count -> -> 1 `i `uc ]
+"106
+[; ;main.c: 106:     }
+}
+[e $U 313  ]
+"107
+[; ;main.c: 107:     else if (Program_Count == 0xFE)
+[e :U 312 ]
+[e $ ! == -> _Program_Count `i -> 254 `i 314  ]
+"108
+[; ;main.c: 108:     {
+{
+"109
+[; ;main.c: 109:         Password = Read_Password_EEPROM();
+[e = _Password ( _Read_Password_EEPROM ..  ]
+"111
+[; ;main.c: 111:         Program_Count = 0;
+[e = _Program_Count -> -> 0 `i `uc ]
+"112
+[; ;main.c: 112:     }
+}
+[e $U 315  ]
+"113
+[; ;main.c: 113:     else
+[e :U 314 ]
+"114
+[; ;main.c: 114:     {
+{
+"115
+[; ;main.c: 115:         Password = Read_Password_EEPROM();
+[e = _Password ( _Read_Password_EEPROM ..  ]
+"116
+[; ;main.c: 116:         Program_Count++;
+[e ++ _Program_Count -> -> 1 `i `uc ]
+"117
+[; ;main.c: 117:     }
+}
+[e :U 315 ]
+[e :U 313 ]
+"119
+[; ;main.c: 119:     DATAEE_WriteByte(0x0000, Program_Count);
+[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `us _Program_Count ]
+"120
+[; ;main.c: 120:     ret = lcd_4bit_send_command(&lcd1, 0X01);
+[e = _ret ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS308 -> -> 1 `i `uc ]
+"121
+[; ;main.c: 121:     ret = lcd_4bit_send_command(&lcd1, 0X02);
+[e = _ret ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS308 -> -> 2 `i `uc ]
+"122
+[; ;main.c: 122:     while (1)
+[e :U 317 ]
+"123
+[; ;main.c: 123:     {
+{
+"129
+[; ;main.c: 129:         ret = convert_uint16_to_string(Password, Password_text);
+[e = _ret ( _convert_uint16_to_string (2 , _Password &U _Password_text ]
+"130
+[; ;main.c: 130:         ret = lcd_4bit_send_string_data_pos(&lcd1, 1, 1, Password_text);
+[e = _ret ( _lcd_4bit_send_string_data_pos (4 , , , -> &U _lcd1 `*CS308 -> -> 1 `i `uc -> -> 1 `i `uc &U _Password_text ]
+"132
+[; ;main.c: 132:         if (2222 == Password)
+[e $ ! == -> -> 2222 `i `ui -> _Password `ui 319  ]
+"133
+[; ;main.c: 133:         {
+{
+"134
+[; ;main.c: 134:             ret = led_on(&led_1);
+[e = _ret ( _led_on (1 -> &U _led_1 `*CS310 ]
+"136
+[; ;main.c: 136:         }
+}
+[e :U 319 ]
+"138
+[; ;main.c: 138:     }
+}
+[e :U 316 ]
+[e $U 317  ]
+[e :U 318 ]
+"139
+[; ;main.c: 139: }
+[e :UE 311 ]
+}
+"140
+[; ;main.c: 140: void APP_Init(void)
 [v _APP_Init `(v ~T0 @X0 1 ef ]
-"96
-[; ;main.c: 96: {
+"141
+[; ;main.c: 141: {
 {
 [e :U _APP_Init ]
 [f ]
-"97
-[; ;main.c: 97:     ret = lcd_4bit_initialze(&lcd1);
+"142
+[; ;main.c: 142:     ret = lcd_4bit_initialze(&lcd1);
 [e = _ret ( _lcd_4bit_initialze (1 -> &U _lcd1 `*CS308 ]
-"98
-[; ;main.c: 98:     ret = keypad_initialize(&key1);
+"143
+[; ;main.c: 143:     ret = keypad_initialize(&key1);
 [e = _ret ( _keypad_initialize (1 -> &U _key1 `*CS307 ]
-"99
-[; ;main.c: 99: }
-[e :UE 314 ]
+"144
+[; ;main.c: 144:     ret = led_initialize(&led_1);
+[e = _ret ( _led_initialize (1 -> &U _led_1 `*CS310 ]
+"145
+[; ;main.c: 145: }
+[e :UE 320 ]
 }
-"100
-[; ;main.c: 100: void Welcom(void)
+"146
+[; ;main.c: 146: void Welcom(void)
 [v _Welcom `(v ~T0 @X0 1 ef ]
-"101
-[; ;main.c: 101: {
+"147
+[; ;main.c: 147: {
 {
 [e :U _Welcom ]
 [f ]
-"102
-[; ;main.c: 102:  uint8 l_welcom_counter = 0;
+"148
+[; ;main.c: 148:  uint8 l_welcom_counter = 0;
 [v _l_welcom_counter `uc ~T0 @X0 1 a ]
 [e = _l_welcom_counter -> -> 0 `i `uc ]
-"104
-[; ;main.c: 104:     ret = lcd_4bit_send_string_data(&lcd1, " Welcom");
+"150
+[; ;main.c: 150:     ret = lcd_4bit_send_string_data(&lcd1, " Welcom");
 [e = _ret ( _lcd_4bit_send_string_data (2 , -> &U _lcd1 `*CS308 :s 1C ]
-"105
-[; ;main.c: 105:     _delay((unsigned long)((100)*(8000000/4000.0)));
+"151
+[; ;main.c: 151:     _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"106
-[; ;main.c: 106:  for(l_welcom_counter =0; l_welcom_counter<8; l_welcom_counter++)
+"152
+[; ;main.c: 152:  for(l_welcom_counter =0; l_welcom_counter<12; l_welcom_counter++)
 {
 [e = _l_welcom_counter -> -> 0 `i `uc ]
-[e $ < -> _l_welcom_counter `i -> 8 `i 316  ]
-[e $U 317  ]
-[e :U 316 ]
-"107
-[; ;main.c: 107:  {
+[e $ < -> _l_welcom_counter `i -> 12 `i 322  ]
+[e $U 323  ]
+[e :U 322 ]
+"153
+[; ;main.c: 153:  {
 {
-"108
-[; ;main.c: 108:   ret = lcd_4bit_send_command(&lcd1, 0X1C);
+"154
+[; ;main.c: 154:   ret = lcd_4bit_send_command(&lcd1, 0X1C);
 [e = _ret ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS308 -> -> 28 `i `uc ]
-"109
-[; ;main.c: 109:   _delay((unsigned long)((100)*(8000000/4000.0)));
+"155
+[; ;main.c: 155:   _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"110
-[; ;main.c: 110:  }
+"156
+[; ;main.c: 156:  }
 }
 [e ++ _l_welcom_counter -> -> 1 `i `uc ]
-[e $ < -> _l_welcom_counter `i -> 8 `i 316  ]
-[e :U 317 ]
+[e $ < -> _l_welcom_counter `i -> 12 `i 322  ]
+[e :U 323 ]
 }
-"112
-[; ;main.c: 112:  for(l_welcom_counter =0; l_welcom_counter<8; l_welcom_counter++)
+"158
+[; ;main.c: 158:  for(l_welcom_counter =0; l_welcom_counter<12; l_welcom_counter++)
 {
 [e = _l_welcom_counter -> -> 0 `i `uc ]
-[e $ < -> _l_welcom_counter `i -> 8 `i 319  ]
-[e $U 320  ]
-[e :U 319 ]
-"113
-[; ;main.c: 113:  {
+[e $ < -> _l_welcom_counter `i -> 12 `i 325  ]
+[e $U 326  ]
+[e :U 325 ]
+"159
+[; ;main.c: 159:  {
 {
-"114
-[; ;main.c: 114:   ret = lcd_4bit_send_command(&lcd1, 0X18);
+"160
+[; ;main.c: 160:   ret = lcd_4bit_send_command(&lcd1, 0X18);
 [e = _ret ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS308 -> -> 24 `i `uc ]
-"115
-[; ;main.c: 115:   _delay((unsigned long)((100)*(8000000/4000.0)));
+"161
+[; ;main.c: 161:   _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"117
-[; ;main.c: 117:  }
+"163
+[; ;main.c: 163:  }
 }
 [e ++ _l_welcom_counter -> -> 1 `i `uc ]
-[e $ < -> _l_welcom_counter `i -> 8 `i 319  ]
-[e :U 320 ]
+[e $ < -> _l_welcom_counter `i -> 12 `i 325  ]
+[e :U 326 ]
 }
-"119
-[; ;main.c: 119:     ret = lcd_4bit_send_command(&lcd1, 0X01);
+"165
+[; ;main.c: 165:     ret = lcd_4bit_send_command(&lcd1, 0X01);
 [e = _ret ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS308 -> -> 1 `i `uc ]
-"120
-[; ;main.c: 120:     ret = lcd_4bit_send_command(&lcd1, 0X02);
+"166
+[; ;main.c: 166:     ret = lcd_4bit_send_command(&lcd1, 0X02);
 [e = _ret ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS308 -> -> 2 `i `uc ]
-"121
-[; ;main.c: 121: }
-[e :UE 315 ]
+"167
+[; ;main.c: 167: }
+[e :UE 321 ]
+}
+"169
+[; ;main.c: 169: uint16 Set_Password(void)
+[v _Set_Password `(us ~T0 @X0 1 ef ]
+"170
+[; ;main.c: 170: {
+{
+[e :U _Set_Password ]
+[f ]
+"171
+[; ;main.c: 171:     uint16 Return_Value = 0;
+[v _Return_Value `us ~T0 @X0 1 a ]
+[e = _Return_Value -> -> 0 `i `us ]
+"172
+[; ;main.c: 172:     uint8 l_Counter = 0;
+[v _l_Counter `uc ~T0 @X0 1 a ]
+[e = _l_Counter -> -> 0 `i `uc ]
+"174
+[; ;main.c: 174:     ret = lcd_4bit_send_string_data(&lcd1, "PLease Set Password");
+[e = _ret ( _lcd_4bit_send_string_data (2 , -> &U _lcd1 `*CS308 :s 2C ]
+"175
+[; ;main.c: 175:     ret = lcd_4bit_send_string_data_pos(&lcd1, 2, 7, " ");
+[e = _ret ( _lcd_4bit_send_string_data_pos (4 , , , -> &U _lcd1 `*CS308 -> -> 2 `i `uc -> -> 7 `i `uc :s 3C ]
+"176
+[; ;main.c: 176:     ret = lcd_4bit_send_command(&lcd1,0X0E);
+[e = _ret ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS308 -> -> 14 `i `uc ]
+"179
+[; ;main.c: 179:     while(l_Counter < 4)
+[e $U 329  ]
+[e :U 330 ]
+"180
+[; ;main.c: 180:     {
+{
+"182
+[; ;main.c: 182:         ret = keypad_get_value(&key1, &(Keypad_Value[l_Counter]));
+[e = _ret ( _keypad_get_value (2 , -> &U _key1 `*CS307 &U *U + &U _Keypad_Value * -> _l_Counter `ux -> -> # *U &U _Keypad_Value `ui `ux ]
+"184
+[; ;main.c: 184:         if (Keypad_Value[l_Counter] != 77)
+[e $ ! != -> *U + &U _Keypad_Value * -> _l_Counter `ux -> -> # *U &U _Keypad_Value `ui `ux `i -> 77 `i 332  ]
+"185
+[; ;main.c: 185:         {
+{
+"186
+[; ;main.c: 186:             ret = lcd_4bit_send_string_data(&lcd1, "*");
+[e = _ret ( _lcd_4bit_send_string_data (2 , -> &U _lcd1 `*CS308 :s 4C ]
+"187
+[; ;main.c: 187:             l_Counter++;
+[e ++ _l_Counter -> -> 1 `i `uc ]
+"188
+[; ;main.c: 188:             _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"189
+[; ;main.c: 189:         }
+}
+[e :U 332 ]
+"191
+[; ;main.c: 191:     }
+}
+[e :U 329 ]
+"179
+[; ;main.c: 179:     while(l_Counter < 4)
+[e $ < -> _l_Counter `i -> 4 `i 330  ]
+[e :U 331 ]
+"193
+[; ;main.c: 193:     Return_Value = (Keypad_Value[3]- 48)+ (Keypad_Value[2]- 48)*10 + (Keypad_Value[1]- 48)*100 + (Keypad_Value[0]- 48) *1000;
+[e = _Return_Value -> + + + - -> *U + &U _Keypad_Value * -> -> -> 3 `i `ui `ux -> -> # *U &U _Keypad_Value `ui `ux `i -> 48 `i * - -> *U + &U _Keypad_Value * -> -> -> 2 `i `ui `ux -> -> # *U &U _Keypad_Value `ui `ux `i -> 48 `i -> 10 `i * - -> *U + &U _Keypad_Value * -> -> -> 1 `i `ui `ux -> -> # *U &U _Keypad_Value `ui `ux `i -> 48 `i -> 100 `i * - -> *U + &U _Keypad_Value * -> -> -> 0 `i `ui `ux -> -> # *U &U _Keypad_Value `ui `ux `i -> 48 `i -> 1000 `i `us ]
+"195
+[; ;main.c: 195:     return Return_Value;
+[e ) _Return_Value ]
+[e $UE 328  ]
+"196
+[; ;main.c: 196: }
+[e :UE 328 ]
+}
+"198
+[; ;main.c: 198: uint16 Read_Password_EEPROM(void)
+[v _Read_Password_EEPROM `(us ~T0 @X0 1 ef ]
+"199
+[; ;main.c: 199: {
+{
+[e :U _Read_Password_EEPROM ]
+[f ]
+"200
+[; ;main.c: 200:     uint16 Return_Value = 0;
+[v _Return_Value `us ~T0 @X0 1 a ]
+[e = _Return_Value -> -> 0 `i `us ]
+"202
+[; ;main.c: 202:     Return_Value = (uint8)DATAEE_ReadByte(0x0120);
+[e = _Return_Value -> ( _DATAEE_ReadByte (1 -> -> 288 `i `us `us ]
+"204
+[; ;main.c: 204:     Return_Value |= (uint16)( DATAEE_ReadByte(0x0120) << 8 );
+[e =| _Return_Value -> -> << -> ( _DATAEE_ReadByte (1 -> -> 288 `i `us `i -> 8 `i `us `us ]
+"206
+[; ;main.c: 206:     return Return_Value;
+[e ) _Return_Value ]
+[e $UE 333  ]
+"208
+[; ;main.c: 208: }
+[e :UE 333 ]
 }
 [a 1C 32 87 101 108 99 111 109 0 ]
+[a 2C 80 76 101 97 115 101 32 83 101 116 32 80 97 115 115 119 111 114 100 0 ]
+[a 4C 42 0 ]
+[a 3C 32 0 ]

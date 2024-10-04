@@ -5119,9 +5119,28 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 8 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\conio.h" 2 3
 # 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/memory.h" 1
+# 99 "./mcc_generated_files/memory.h"
+uint8_t FLASH_ReadByte(uint32_t flashAddr);
+# 125 "./mcc_generated_files/memory.h"
+uint16_t FLASH_ReadWord(uint32_t flashAddr);
+# 157 "./mcc_generated_files/memory.h"
+void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
+# 193 "./mcc_generated_files/memory.h"
+int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
+# 218 "./mcc_generated_files/memory.h"
+void FLASH_EraseBlock(uint32_t baseAddr);
+# 249 "./mcc_generated_files/memory.h"
+void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+# 275 "./mcc_generated_files/memory.h"
+uint8_t DATAEE_ReadByte(uint16_t bAdd);
+
+void MEMORY_Tasks(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+# 70 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
+# 83 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 12 "./main.h" 2
 
@@ -5361,13 +5380,50 @@ Std_ReturnType convert_float32_to_string(float32 value, uint8* str);
 Std_ReturnType convert_float64_to_string(float64 value, uint8* str);
 # 14 "./main.h" 2
 
+# 1 "./ECU/LED/ecu_led.h" 1
+# 18 "./ECU/LED/ecu_led.h"
+# 1 "./ECU/LED/ecu_led_cfg.h" 1
+# 18 "./ECU/LED/ecu_led.h" 2
+# 31 "./ECU/LED/ecu_led.h"
+typedef enum
+{
+    LED_OFF =0,
+    LED_ON
+}led_status_t;
+
+typedef struct
+{
+    uint8 port_name :4;
+    uint8 pin_name :3;
+    uint8 led_state :1;
+
+}led_t;
+
+
+
+
+
+Std_ReturnType led_initialize(const led_t *led);
+
+Std_ReturnType led_on(const led_t *led);
+
+Std_ReturnType led_off(const led_t *led);
+
+Std_ReturnType led_toggle(const led_t *led);
+# 15 "./main.h" 2
+
+
 
 
 
 void APP_Init(void);
 void Welcom(void);
+uint16 Set_Password(void);
+uint16 Read_Password_EEPROM(void);
 # 1 "main.c" 2
 
+
+led_t led_1 = {.port_name = PORTA_INDEX, .pin_name =PIN0, .led_state = LED_OFF};
 
 chr_lcd_4bit_t lcd1 = {
     .lcd_rs.Port =PORTD_INDEX,
@@ -5412,18 +5468,18 @@ keypad_t key1 = {
     .keypad_row_pins[1].Logic=GPIO_LOW,
 
     .keypad_row_pins[2].Port=PORTE_INDEX,
-    .keypad_row_pins[2].Pin=PIN2,
+    .keypad_row_pins[2].Pin=PIN0,
     .keypad_row_pins[2].Direction=GPIO_OUTPUT,
     .keypad_row_pins[2].Logic=GPIO_LOW,
 
     .keypad_row_pins[3].Port=PORTE_INDEX,
-    .keypad_row_pins[3].Pin=PIN0,
+    .keypad_row_pins[3].Pin=PIN1,
     .keypad_row_pins[3].Direction=GPIO_OUTPUT,
     .keypad_row_pins[3].Logic=GPIO_LOW,
 
 
-    .keypad_col_pins[0].Port=PORTB_INDEX,
-    .keypad_col_pins[0].Pin=PIN4,
+    .keypad_col_pins[0].Port=PORTC_INDEX,
+    .keypad_col_pins[0].Pin=PIN0,
     .keypad_col_pins[0].Direction=GPIO_INPUT,
     .keypad_col_pins[0].Logic=GPIO_LOW,
 
@@ -5446,18 +5502,61 @@ keypad_t key1 = {
 
 Std_ReturnType ret = (Std_ReturnType)0X00;
 
+uint8 Program_Count = 0;
+static uint16 Password = 0;
+uint8 Password_text[6];
+uint8 Keypad_Value[4] = {77, 77, 77, 77};
 
 
 void main(void)
 {
+    DATAEE_WriteByte(0x0000, 0xFF);
 
     SYSTEM_Initialize();
     APP_Init();
 
     Welcom();
 
+    Program_Count = DATAEE_ReadByte(0x0000);
+
+    if (Program_Count == 0xFF)
+    {
+        Password = Set_Password();
+
+        DATAEE_WriteByte(0x0120, (uint8)Password);
+        DATAEE_WriteByte(0x0121, (uint8)( (Password >> 8) &0x0F));
+        Program_Count = 1;
+    }
+    else if (Program_Count == 0xFE)
+    {
+        Password = Read_Password_EEPROM();
+
+        Program_Count = 0;
+    }
+    else
+    {
+        Password = Read_Password_EEPROM();
+        Program_Count++;
+    }
+
+    DATAEE_WriteByte(0x0000, Program_Count);
+    ret = lcd_4bit_send_command(&lcd1, 0X01);
+    ret = lcd_4bit_send_command(&lcd1, 0X02);
     while (1)
     {
+
+
+
+
+
+        ret = convert_uint16_to_string(Password, Password_text);
+        ret = lcd_4bit_send_string_data_pos(&lcd1, 1, 1, Password_text);
+
+        if (2222 == Password)
+        {
+            ret = led_on(&led_1);
+
+        }
 
     }
 }
@@ -5465,6 +5564,7 @@ void APP_Init(void)
 {
     ret = lcd_4bit_initialze(&lcd1);
     ret = keypad_initialize(&key1);
+    ret = led_initialize(&led_1);
 }
 void Welcom(void)
 {
@@ -5472,13 +5572,13 @@ void Welcom(void)
 
     ret = lcd_4bit_send_string_data(&lcd1, " Welcom");
     _delay((unsigned long)((100)*(8000000/4000.0)));
- for(l_welcom_counter =0; l_welcom_counter<8; l_welcom_counter++)
+ for(l_welcom_counter =0; l_welcom_counter<12; l_welcom_counter++)
  {
   ret = lcd_4bit_send_command(&lcd1, 0X1C);
   _delay((unsigned long)((100)*(8000000/4000.0)));
  }
 
- for(l_welcom_counter =0; l_welcom_counter<8; l_welcom_counter++)
+ for(l_welcom_counter =0; l_welcom_counter<12; l_welcom_counter++)
  {
   ret = lcd_4bit_send_command(&lcd1, 0X18);
   _delay((unsigned long)((100)*(8000000/4000.0)));
@@ -5487,4 +5587,45 @@ void Welcom(void)
 
     ret = lcd_4bit_send_command(&lcd1, 0X01);
     ret = lcd_4bit_send_command(&lcd1, 0X02);
+}
+
+uint16 Set_Password(void)
+{
+    uint16 Return_Value = 0;
+    uint8 l_Counter = 0;
+
+    ret = lcd_4bit_send_string_data(&lcd1, "PLease Set Password");
+    ret = lcd_4bit_send_string_data_pos(&lcd1, 2, 7, " ");
+    ret = lcd_4bit_send_command(&lcd1,0X0E);
+
+
+    while(l_Counter < 4)
+    {
+
+        ret = keypad_get_value(&key1, &(Keypad_Value[l_Counter]));
+
+        if (Keypad_Value[l_Counter] != 77)
+        {
+            ret = lcd_4bit_send_string_data(&lcd1, "*");
+            l_Counter++;
+            _delay((unsigned long)((500)*(8000000/4000.0)));
+        }
+
+    }
+
+    Return_Value = (Keypad_Value[3]- 48)+ (Keypad_Value[2]- 48)*10 + (Keypad_Value[1]- 48)*100 + (Keypad_Value[0]- 48) *1000;
+
+    return Return_Value;
+}
+
+uint16 Read_Password_EEPROM(void)
+{
+    uint16 Return_Value = 0;
+
+    Return_Value = (uint8)DATAEE_ReadByte(0x0120);
+
+    Return_Value |= (uint16)( DATAEE_ReadByte(0x0120) << 8 );
+
+    return Return_Value;
+
 }
