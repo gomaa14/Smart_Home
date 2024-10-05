@@ -77,13 +77,21 @@ keypad_t key1 = {
     
 };
 
+dc_motor_t motor_1 = {.dc_motor[0].dc_motor_port = PORTA_INDEX,
+                      .dc_motor[0].dc_motor_pin = PIN1,
+                      .dc_motor[0].motor_status = DC_MOTOR_OFF,
+                      .dc_motor[1].dc_motor_port = PORTA_INDEX,
+                      .dc_motor[1].dc_motor_pin = PIN2,
+                      .dc_motor[1].motor_status = DC_MOTOR_OFF
+};
+
+
 Std_ReturnType ret = E_NOT_OK;
 
 uint8 Program_Count = 0;
 static uint16 Password = 0;
 uint8 Password_text[6];
-uint8 Keypad_Value[4] = {77, 77, 77, 77};
-
+uint8 password_check = PASSWORD_CHECK_FALSE;
 
 void main(void)
 {
@@ -117,23 +125,35 @@ void main(void)
     }
     
     DATAEE_WriteByte(0x0000, Program_Count);
-    ret = lcd_4bit_send_command(&lcd1, _LCD_CLEAR_DISPLAY);
-    ret = lcd_4bit_send_command(&lcd1, _LCD_RETURN_HOME);
+    
+    
+    password_check = Check_Password(Password);
+    
     while (1)
     {
-        /*
-        ret = lcd_4bit_send_string_data(&lcd1, " Please Enter Password");
-        ret = lcd_4bit_send_string_data_pos(&lcd1, 2, 7, " ");
-        ret = lcd_4bit_send_command(&lcd1,_LCD_DISPLAY_ON_UNDERCURSOR_OFF_BLINKING_ON);
-        */
-        ret = convert_uint16_to_string(Password, Password_text);
-        ret = lcd_4bit_send_string_data_pos(&lcd1, 1, 1, Password_text);
         
-        if (2222 == Password)
+        if (password_check == PASSWORD_CHECK_TRUE)
         {
+            ret = lcd_4bit_send_command(&lcd1, _LCD_CLEAR_DISPLAY);
+            ret = lcd_4bit_send_string_data_pos(&lcd1, 1, 1, "Correct Password");
             ret = led_on(&led_1);
-            
+            ret = dc_motor_move_right(&motor_1);
+            __delay_ms(5000);
+            ret = dc_motor_stop(&motor_1);
+            password_check = PASSWORD_CHECK_Handel_CORRECT;
         }
+        else if (password_check == PASSWORD_CHECK_FALSE )
+        {
+            ret = lcd_4bit_send_command(&lcd1, _LCD_CLEAR_DISPLAY);
+            ret = lcd_4bit_send_string_data_pos(&lcd1, 1, 6, "InCorrect Password");
+            ret = lcd_4bit_send_string_data_pos(&lcd1, 2, 6, "Try again");
+            ret = led_off(&led_1);
+            ret = dc_motor_stop(&motor_1);
+            __delay_ms(2000);
+            password_check = Check_Password(Password);
+        }
+        else{ /* Nothing*/}
+        
         
     }
 }
@@ -142,6 +162,8 @@ void APP_Init(void)
     ret = lcd_4bit_initialze(&lcd1);
     ret = keypad_initialize(&key1);
     ret = led_initialize(&led_1);
+    ret = dc_motor_initialize(&motor_1);
+    
 }
 void Welcom(void)
 {
@@ -170,7 +192,7 @@ uint16 Set_Password(void)
 {
     uint16 Return_Value = 0;
     uint8 l_Counter = 0;
-    
+    uint8 Keypad_Value[4] = {0};
     ret = lcd_4bit_send_string_data(&lcd1, "PLease Set Password");
     ret = lcd_4bit_send_string_data_pos(&lcd1, 2, 7, " ");
     ret = lcd_4bit_send_command(&lcd1,_LCD_DISPLAY_ON_UNDERCURSOR_ON_BLINKING_OFF);
@@ -181,11 +203,11 @@ uint16 Set_Password(void)
         
         ret = keypad_get_value(&key1, &(Keypad_Value[l_Counter]));
         
-        if (Keypad_Value[l_Counter] != 77)
+        if (Keypad_Value[l_Counter] != 0)
         {
             ret = lcd_4bit_send_string_data(&lcd1, "*");
             l_Counter++;
-            __delay_ms(500);
+            __delay_ms(250);
         }
         
     }
@@ -201,11 +223,49 @@ uint16 Read_Password_EEPROM(void)
     
     Return_Value = (uint8)DATAEE_ReadByte(0x0120);
     
-    Return_Value |= (uint16)( DATAEE_ReadByte(0x0120) << 8 );
+    Return_Value |= (uint16)( DATAEE_ReadByte(0x0121) << 8 );
     
     return Return_Value;
     
 }
 
-
+uint8 Check_Password(uint16 Password)
+{
+    uint16 Enter_Password;
+    uint8 Ret_value = PASSWORD_CHECK_FALSE;
+    uint8 Keypad_Value[4] = {0};
+    uint8 l_Counter = 0;
+    ret = lcd_4bit_send_command(&lcd1, _LCD_CLEAR_DISPLAY);
+    ret = lcd_4bit_send_command(&lcd1, _LCD_RETURN_HOME);
+    
+    ret = lcd_4bit_send_string_data(&lcd1, "Please Enter Pass");
+    ret = lcd_4bit_send_string_data_pos(&lcd1, 2, 7, " ");
+    ret = lcd_4bit_send_command(&lcd1,_LCD_DISPLAY_ON_UNDERCURSOR_ON_BLINKING_OFF);
+    
+    while(l_Counter < 4)
+    {
+        ret = keypad_get_value(&key1, &(Keypad_Value[l_Counter]));
+        if (Keypad_Value[l_Counter] != 0)
+        {
+            ret = lcd_4bit_send_string_data(&lcd1, &(Keypad_Value[l_Counter]));
+            l_Counter++;
+            __delay_ms(250);
+        }
+        
+    }
+    
+    Enter_Password = (Keypad_Value[3]- 48)+ (Keypad_Value[2]- 48)*10 + (Keypad_Value[1]- 48)*100 + (Keypad_Value[0]- 48) *1000;
+    
+    if(Password == Enter_Password)
+    {
+        Ret_value = PASSWORD_CHECK_TRUE;
+    }
+    else
+    {
+        Ret_value = PASSWORD_CHECK_FALSE;
+    }
+    
+    return Ret_value;
+    
+}
 

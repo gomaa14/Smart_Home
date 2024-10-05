@@ -13,6 +13,16 @@ GPIO_HIGH 1
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
+"34 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LED/ecu_led.c
+[e E3236 . `uc
+GPIO_OUTPUT 0
+GPIO_INPUT 1
+]
+"68
+[e E3232 . `uc
+GPIO_LOW 0
+GPIO_HIGH 1
+]
 "72 D:\lap_interface\project\Smart_Home\smart_home_master.X\HAL/GPIO/hal_gpio.c
 [e E3236 . `uc
 GPIO_OUTPUT 0
@@ -62,48 +72,20 @@ GPIO_HIGH 1
 GPIO_OUTPUT 0
 GPIO_INPUT 1
 ]
-"34 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LED/ecu_led.c
+"35 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/DC_MOTOR/ecu_dc_motor.c
 [e E3236 . `uc
 GPIO_OUTPUT 0
 GPIO_INPUT 1
 ]
-"68
+"86
 [e E3232 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\__fpclassifyf.c
-[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
-"1 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-"193 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c
-[v _pad pad `(v  1 s 1 pad ]
-"513
-[v _dtoa dtoa `(v  1 s 1 dtoa ]
-"587
-[v _efgtoa efgtoa `(v  1 s 1 efgtoa ]
-"1158
-[v _read_prec_or_width read_prec_or_width `(i  1 s 2 read_prec_or_width ]
-"1177
-[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
-"1817
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flneg.c
-[v ___flneg __flneg `(d  1 e 4 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
-"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\floorf.c
-[v _floorf floorf `(f  1 e 4 0 ]
-"43 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
 "86 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
 "54 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\ftdiv.c
@@ -112,20 +94,10 @@ GPIO_HIGH 1
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"1 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\labs.c
-[v _labs labs `(l  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\memcpy.c
-[v _memcpy memcpy `(*.39v  1 e 2 0 ]
 "3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\memset.c
-[v _memset memset `(*.30v  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
+[v _memset memset `(*.2v  1 e 2 0 ]
 "9 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\putch.c
-[v _putch putch `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -134,14 +106,18 @@ GPIO_HIGH 1
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strcpy.c
-[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
+"21 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/DC_MOTOR/ecu_dc_motor.c
+[v _dc_motor_initialize dc_motor_initialize `(uc  1 e 1 0 ]
+"63
+[v _dc_motor_move_right dc_motor_move_right `(uc  1 e 1 0 ]
+"139
+[v _dc_motor_stop dc_motor_stop `(uc  1 e 1 0 ]
 "30 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/KEYPAD/ecu_keypad.c
 [v _keypad_initialize keypad_initialize `(uc  1 e 1 0 ]
 "68
@@ -166,8 +142,6 @@ GPIO_HIGH 1
 [v _lcd_8bit_send_char_data_pos lcd_8bit_send_char_data_pos `(uc  1 e 1 0 ]
 "531
 [v _lcd_8bit_send_string_data lcd_8bit_send_string_data `(uc  1 e 1 0 ]
-"691
-[v _convert_uint16_to_string convert_uint16_to_string `(uc  1 e 1 0 ]
 "844
 [v _lcd_send_4bit lcd_send_4bit `(uc  1 s 1 lcd_send_4bit ]
 "878
@@ -184,6 +158,8 @@ GPIO_HIGH 1
 [v _led_initialize led_initialize `(uc  1 e 1 0 ]
 "51
 [v _led_on led_on `(uc  1 e 1 0 ]
+"84
+[v _led_off led_off `(uc  1 e 1 0 ]
 "41 D:\lap_interface\project\Smart_Home\smart_home_master.X\HAL/GPIO/hal_gpio.c
 [v _gpio_pin_direction_initialize gpio_pin_direction_initialize `(uc  1 e 1 0 ]
 "118
@@ -198,16 +174,18 @@ GPIO_HIGH 1
 [v _gpio_port_direction_initialize gpio_port_direction_initialize `(uc  1 e 1 0 ]
 "305
 [v _gpio_port_write_logic gpio_port_write_logic `(uc  1 e 1 0 ]
-"88 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+"96 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"140
+"160
 [v _APP_Init APP_Init `(v  1 e 1 0 ]
-"146
+"168
 [v _Welcom Welcom `(v  1 e 1 0 ]
-"169
+"191
 [v _Set_Password Set_Password `(us  1 e 2 0 ]
-"198
+"220
 [v _Read_Password_EEPROM Read_Password_EEPROM `(us  1 e 2 0 ]
+"232
+[v _Check_Password Check_Password `(uc  1 e 1 0 ]
 "50 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "57
@@ -262,7 +240,7 @@ GPIO_HIGH 1
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "3072
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
-[s S717 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[s S783 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 TMR3IF 1 0 :1:1 
 `uc 1 HLVDIF 1 0 :1:2 
 `uc 1 BCLIF 1 0 :1:3 
@@ -272,15 +250,15 @@ GPIO_HIGH 1
 `uc 1 OSCFIF 1 0 :1:7 
 ]
 "3478
-[s S726 . 1 `uc 1 . 1 0 :2:0 
+[s S792 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LVDIF 1 0 :1:2 
 ]
-[s S729 . 1 `uc 1 . 1 0 :6:0 
+[s S795 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CMIF 1 0 :1:6 
 ]
-[u S732 . 1 `S717 1 . 1 0 `S726 1 . 1 0 `S729 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES732  1 e 1 @4001 ]
-[s S681 . 1 `uc 1 RD 1 0 :1:0 
+[u S798 . 1 `S783 1 . 1 0 `S792 1 . 1 0 `S795 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES798  1 e 1 @4001 ]
+[s S747 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -290,11 +268,11 @@ GPIO_HIGH 1
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "3634
-[s S690 . 1 `uc 1 . 1 0 :6:0 
+[s S756 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S693 . 1 `S681 1 . 1 0 `S690 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES693  1 e 1 @4006 ]
+[u S759 . 1 `S747 1 . 1 0 `S756 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES759  1 e 1 @4006 ]
 "3679
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "3686
@@ -305,11 +283,11 @@ GPIO_HIGH 1
 [v _EEADRH EEADRH `VEuc  1 e 1 @4010 ]
 "6455
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S527 . 1 `uc 1 . 1 0 :7:0 
+[s S593 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "6998
-[s S530 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S596 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -318,12 +296,12 @@ GPIO_HIGH 1
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S539 . 1 `uc 1 . 1 0 :7:0 
+[s S605 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S542 . 1 `S527 1 . 1 0 `S530 1 . 1 0 `S539 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES542  1 e 1 @4081 ]
-[s S562 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S608 . 1 `S593 1 . 1 0 `S596 1 . 1 0 `S605 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES608  1 e 1 @4081 ]
+[s S628 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -333,7 +311,7 @@ GPIO_HIGH 1
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "7075
-[s S571 . 1 `uc 1 . 1 0 :1:0 
+[s S637 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -342,12 +320,12 @@ GPIO_HIGH 1
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S580 . 1 `uc 1 . 1 0 :6:0 
+[s S646 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S584 . 1 `S562 1 . 1 0 `S571 1 . 1 0 `S580 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES584  1 e 1 @4082 ]
+[u S650 . 1 `S628 1 . 1 0 `S637 1 . 1 0 `S646 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES650  1 e 1 @4082 ]
 "7181
 [v _TABLAT TABLAT `VEuc  1 e 1 @4085 ]
 "7197
@@ -356,13 +334,6 @@ GPIO_HIGH 1
 [v _TBLPTRH TBLPTRH `VEuc  1 e 1 @4087 ]
 "7211
 [v _TBLPTRU TBLPTRU `VEuc  1 e 1 @4088 ]
-"153 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c
-[v _prec prec `i  1 s 2 prec ]
-[v _width width `i  1 s 2 width ]
-"154
-[v _flags flags `uc  1 s 1 flags ]
-"185
-[v _dbuf dbuf `[80]uc  1 s 80 dbuf ]
 "13 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/KEYPAD/ecu_keypad.c
 [v _btn_values btn_values `C[4][4]uc  1 s 16 btn_values ]
 "13 D:\lap_interface\project\Smart_Home\smart_home_master.X\HAL/GPIO/hal_gpio.c
@@ -371,12 +342,12 @@ GPIO_HIGH 1
 [v _port_register port_register `[5]*.39VEuc  1 e 10 0 ]
 "21
 [v _lat_register lat_register `[5]*.39VEuc  1 e 10 0 ]
-[s S807 . 1 `uc 1 port_name 1 0 :4:0 
+[s S408 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin_name 1 0 :3:4 
 `uc 1 led_state 1 0 :1:7 
 ]
 "3 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
-[v _led_1 led_1 `S807  1 e 1 0 ]
+[v _led_1 led_1 `S408  1 e 1 0 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -388,20 +359,25 @@ GPIO_HIGH 1
 "36
 [s S29 . 8 `[4]S24 1 keypad_row_pins 4 0 `[4]S24 1 keypad_col_pins 4 4 ]
 [v _key1 key1 `S29  1 e 8 0 ]
+[s S913 . 1 `uc 1 dc_motor_port 1 0 :4:0 
+`uc 1 dc_motor_pin 1 0 :3:4 
+`uc 1 motor_status 1 0 :1:7 
+]
 "80
+[s S917 . 2 `[2]S913 1 dc_motor 2 0 ]
+[v _motor_1 motor_1 `S917  1 e 2 0 ]
+"89
 [v _ret ret `uc  1 e 1 0 ]
-"82
+"91
 [v _Program_Count Program_Count `uc  1 e 1 0 ]
-"83
+"92
 [v _Password Password `us  1 s 2 Password ]
-"84
-[v _Password_text Password_text `[6]uc  1 e 6 0 ]
-"85
-[v _Keypad_Value Keypad_Value `[4]uc  1 e 4 0 ]
-"88
+"94
+[v _password_check password_check `uc  1 e 1 0 ]
+"96
 [v _main main `(v  1 e 1 0 ]
 {
-"139
+"159
 } 0
 "51 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LED/ecu_led.c
 [v _led_on led_on `(uc  1 e 1 0 ]
@@ -415,394 +391,156 @@ GPIO_HIGH 1
 [v led_on@pin_obj pin_obj `S24  1 a 1 11 ]
 "53
 [v led_on@ret ret `uc  1 a 1 10 ]
-[s S807 . 1 `uc 1 port_name 1 0 :4:0 
+[s S408 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin_name 1 0 :3:4 
 `uc 1 led_state 1 0 :1:7 
 ]
 "51
-[v led_on@led led `*.30CS807  1 p 1 8 ]
+[v led_on@led led `*.30CS408  1 p 1 8 ]
 "75
 } 0
-"691 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LCD/ecu_chr_lcd.c
-[v _convert_uint16_to_string convert_uint16_to_string `(uc  1 e 1 0 ]
+"84
+[v _led_off led_off `(uc  1 e 1 0 ]
 {
-"703
-[v convert_uint16_to_string@temp_str temp_str `[6]uc  1 a 6 56 ]
-"704
-[v convert_uint16_to_string@Data_Counter Data_Counter `uc  1 a 1 63 ]
-"694
-[v convert_uint16_to_string@Ret Ret `uc  1 a 1 62 ]
-"691
-[v convert_uint16_to_string@value value `us  1 p 2 53 ]
-[v convert_uint16_to_string@str str `*.30uc  1 p 1 55 ]
-"725
+[s S24 . 1 `uc 1 Pin 1 0 :3:0 
+`uc 1 Port 1 0 :3:3 
+`uc 1 Logic 1 0 :1:6 
+`uc 1 Direction 1 0 :1:7 
+]
+"94
+[v led_off@pin_obj pin_obj `S24  1 a 1 11 ]
+"86
+[v led_off@ret ret `uc  1 a 1 10 ]
+[s S408 . 1 `uc 1 port_name 1 0 :4:0 
+`uc 1 pin_name 1 0 :3:4 
+`uc 1 led_state 1 0 :1:7 
+]
+"84
+[v led_off@led led `*.30CS408  1 p 1 8 ]
+"104
 } 0
-"9 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_sprintf.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
+"139 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/DC_MOTOR/ecu_dc_motor.c
+[v _dc_motor_stop dc_motor_stop `(uc  1 e 1 0 ]
 {
-[u S1439 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-"13
-[s S1442 _IO_FILE 12 `S1439 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v sprintf@f f `S1442  1 a 12 66 ]
-"12
-[v sprintf@ap ap `[1]*.30v  1 a 1 65 ]
-"9
-[v sprintf@s s `*.30uc  1 p 1 47 ]
-[v sprintf@fmt fmt `*.31Cuc  1 p 1 48 ]
-"23
+[s S24 . 1 `uc 1 Pin 1 0 :3:0 
+`uc 1 Port 1 0 :3:3 
+`uc 1 Logic 1 0 :1:6 
+`uc 1 Direction 1 0 :1:7 
+]
+"156
+[v dc_motor_stop@pin_2 pin_2 `S24  1 a 1 12 ]
+"150
+[v dc_motor_stop@pin_1 pin_1 `S24  1 a 1 11 ]
+"141
+[v dc_motor_stop@ret ret `uc  1 a 1 10 ]
+[s S913 . 1 `uc 1 dc_motor_port 1 0 :4:0 
+`uc 1 dc_motor_pin 1 0 :3:4 
+`uc 1 motor_status 1 0 :1:7 
+]
+"139
+[s S917 . 2 `[2]S913 1 dc_motor 2 0 ]
+[v dc_motor_stop@obj obj `*.30CS917  1 p 1 8 ]
+"168
 } 0
-"1817 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"63
+[v _dc_motor_move_right dc_motor_move_right `(uc  1 e 1 0 ]
 {
-"1820
-[v vfprintf@cfmt cfmt `*.31uc  1 a 1 64 ]
-[s S1474 _IO_FILE 0 ]
-"1817
-[v vfprintf@fp fp `*.30S1474  1 p 1 44 ]
-[v vfprintf@fmt fmt `*.31Cuc  1 p 1 45 ]
-[v vfprintf@ap ap `*.30*.30v  1 p 1 46 ]
-"1840
+[s S24 . 1 `uc 1 Pin 1 0 :3:0 
+`uc 1 Port 1 0 :3:3 
+`uc 1 Logic 1 0 :1:6 
+`uc 1 Direction 1 0 :1:7 
+]
+"80
+[v dc_motor_move_right@pin_2 pin_2 `S24  1 a 1 12 ]
+"74
+[v dc_motor_move_right@pin_1 pin_1 `S24  1 a 1 11 ]
+"65
+[v dc_motor_move_right@ret ret `uc  1 a 1 10 ]
+[s S913 . 1 `uc 1 dc_motor_port 1 0 :4:0 
+`uc 1 dc_motor_pin 1 0 :3:4 
+`uc 1 motor_status 1 0 :1:7 
+]
+"63
+[s S917 . 2 `[2]S913 1 dc_motor 2 0 ]
+[v dc_motor_move_right@obj obj `*.30CS917  1 p 1 8 ]
+"92
 } 0
-"1177
-[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
-{
-[u S1529 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
-"1188
-[v vfpfcnvrt@convarg convarg `S1529  1 a 4 58 ]
-"1179
-[v vfpfcnvrt@cp cp `*.31uc  1 a 1 63 ]
-[v vfpfcnvrt@c c `uc  1 a 1 62 ]
-[s S1474 _IO_FILE 0 ]
-"1177
-[v vfpfcnvrt@fp fp `*.30S1474  1 p 1 53 ]
-[v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 54 ]
-[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 55 ]
-"1814
-} 0
-"1158
-[v _read_prec_or_width read_prec_or_width `(i  1 s 2 read_prec_or_width ]
-{
-"1164
-[v read_prec_or_width@c c `uc  1 a 1 8 ]
-"1159
-[v read_prec_or_width@n n `i  1 a 2 9 ]
-"1158
-[v read_prec_or_width@fmt fmt `*.30*.31Cuc  1 p 1 6 ]
-[v read_prec_or_width@ap ap `*.30[1]*.30v  1 p 1 7 ]
-"1171
-} 0
-"587
-[v _efgtoa efgtoa `(v  1 s 1 efgtoa ]
-{
-[u S1492 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
-"592
-[v efgtoa@u u `S1492  1 a 4 40 ]
-[v efgtoa@g g `S1492  1 a 4 34 ]
-"591
-[v efgtoa@l l `d  1 a 4 29 ]
-[v efgtoa@h h `d  1 a 4 25 ]
-"592
-[v efgtoa@ou ou `S1492  1 a 4 19 ]
-"590
-[v efgtoa@n n `i  1 a 2 38 ]
-[v efgtoa@i i `i  1 a 2 23 ]
-[v efgtoa@w w `i  1 a 2 17 ]
-[v efgtoa@e e `i  1 a 2 15 ]
-[v efgtoa@m m `i  1 a 2 13 ]
-[v efgtoa@d d `i  1 a 2 11 ]
-[v efgtoa@t t `i  1 a 2 4 ]
-[v efgtoa@p p `i  1 a 2 2 ]
-[v efgtoa@ne ne `i  1 a 2 0 ]
-"589
-[v efgtoa@sign sign `uc  1 a 1 33 ]
-[v efgtoa@nmode nmode `uc  1 a 1 10 ]
-[v efgtoa@mode mode `uc  1 a 1 9 ]
-[v efgtoa@pp pp `uc  1 a 1 8 ]
-[s S1474 _IO_FILE 0 ]
-"587
-[v efgtoa@fp fp `*.30S1474  1 p 1 45 ]
-[v efgtoa@f f `d  1 p 4 46 ]
-[v efgtoa@c c `uc  1 p 1 50 ]
-"868
-} 0
-"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\strcpy.c
-[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
-{
-"5
-[v strcpy@d d `*.39uc  1 a 2 4 ]
-"3
-[v strcpy@dest dest `*.39uc  1 p 2 0 ]
-[v strcpy@src src `*.31Cuc  1 p 1 2 ]
-"8
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\memcpy.c
-[v _memcpy memcpy `(*.39v  1 e 2 0 ]
-{
-"8
-[v memcpy@s s `*.39Cuc  1 a 2 9 ]
-"7
-[v memcpy@d d `*.39uc  1 a 2 7 ]
-"9
-[v memcpy@tmp tmp `uc  1 a 1 6 ]
-"4
-[v memcpy@d1 d1 `*.39v  1 p 2 0 ]
-[v memcpy@s1 s1 `*.39Cv  1 p 2 2 ]
-[v memcpy@n n `ui  1 p 2 4 ]
-"18
-} 0
-"1 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\labs.c
-[v _labs labs `(l  1 e 4 0 ]
-{
-[v labs@a a `l  1 p 4 0 ]
-"4
-} 0
-"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\floorf.c
-[v _floorf floorf `(f  1 e 4 0 ]
-{
-[u S1614 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
-"5
-[v floorf@u u `S1614  1 a 4 41 ]
-"7
-[v floorf@m m `ul  1 a 4 35 ]
-"6
-[v floorf@e e `i  1 a 2 39 ]
-"3
-[v floorf@x x `f  1 p 4 25 ]
-"4
-[v floorf@F521 F521 `S1614  1 s 4 F521 ]
-"27
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\__fpclassifyf.c
-[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
-{
-[u S1614 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
-"6
-[v ___fpclassifyf@u u `S1614  1 a 4 10 ]
-"7
-[v ___fpclassifyf@e e `i  1 a 2 8 ]
-"4
-[v ___fpclassifyf@x x `f  1 p 4 0 ]
-"5
-[v ___fpclassifyf@F465 F465 `S1614  1 s 4 F465 ]
-"11
-} 0
-"43 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
-{
-"45
-[v ___fltol@exp1 exp1 `uc  1 a 1 9 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 8 ]
-"43
-[v ___fltol@f1 f1 `d  1 p 4 0 ]
-"70
-} 0
-"245 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
-[v ___flsub __flsub `(d  1 e 4 0 ]
-{
-[v ___flsub@b b `d  1 p 4 25 ]
-[v ___flsub@a a `d  1 p 4 29 ]
-"250
-} 0
-"10
-[v ___fladd __fladd `(d  1 e 4 0 ]
-{
-"17
-[v ___fladd@grs grs `uc  1 a 1 15 ]
-"15
-[v ___fladd@bexp bexp `uc  1 a 1 14 ]
-"16
-[v ___fladd@aexp aexp `uc  1 a 1 13 ]
-"13
-[v ___fladd@signs signs `uc  1 a 1 12 ]
-"10
-[v ___fladd@b b `d  1 p 4 0 ]
-[v ___fladd@a a `d  1 p 4 4 ]
-"237
-} 0
-"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flneg.c
-[v ___flneg __flneg `(d  1 e 4 0 ]
-{
-[v ___flneg@f1 f1 `d  1 p 4 0 ]
-"20
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S1299 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S1304 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1307 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1299 1 fAsBytes 4 0 `S1304 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1307  1 a 4 19 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S1375 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S1378 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1375 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1378  1 a 2 23 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 18 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 13 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 12 ]
-"8
-[v ___flmul@b b `d  1 p 4 0 ]
-[v ___flmul@a a `d  1 p 4 4 ]
-"205
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-{
-[v ___flge@ff1 ff1 `d  1 p 4 25 ]
-[v ___flge@ff2 ff2 `d  1 p 4 29 ]
-"19
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fleq.c
-[v ___fleq __fleq `(b  1 e 0 0 ]
-{
-[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
-[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
-"12
-} 0
-"11 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-{
-"21
-[v ___fldiv@grs grs `ul  1 a 4 19 ]
-"22
-[v ___fldiv@rem rem `ul  1 a 4 12 ]
-"20
-[v ___fldiv@new_exp new_exp `s  1 a 2 17 ]
-"19
-[v ___fldiv@aexp aexp `uc  1 a 1 24 ]
-"18
-[v ___fldiv@bexp bexp `uc  1 a 1 23 ]
-"16
-[v ___fldiv@sign sign `uc  1 a 1 16 ]
-"11
-[v ___fldiv@b b `d  1 p 4 0 ]
-[v ___fldiv@a a `d  1 p 4 4 ]
-"185
-} 0
-"513 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\doprnt.c
-[v _dtoa dtoa `(v  1 s 1 dtoa ]
-{
-"516
-[v dtoa@i i `i  1 a 2 32 ]
-"518
-[v dtoa@p p `i  1 a 2 29 ]
-"516
-[v dtoa@w w `i  1 a 2 27 ]
-"515
-[v dtoa@s s `uc  1 a 1 31 ]
-[s S1474 _IO_FILE 0 ]
-"513
-[v dtoa@fp fp `*.30S1474  1 p 1 22 ]
-[v dtoa@d d `i  1 p 2 23 ]
-"583
-} 0
-"193
-[v _pad pad `(v  1 s 1 pad ]
-{
-"195
-[v pad@i i `i  1 a 2 20 ]
-[s S1474 _IO_FILE 0 ]
-"193
-[v pad@fp fp `*.30S1474  1 p 1 14 ]
-[v pad@buf buf `*.39uc  1 p 2 15 ]
-[v pad@p p `i  1 p 2 17 ]
-"226
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
-{
-"11
-[v fputs@i i `i  1 a 2 12 ]
-"10
-[v fputs@c c `uc  1 a 1 11 ]
-"8
-[v fputs@s s `*.39Cuc  1 p 2 8 ]
-[u S1439 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1442 _IO_FILE 12 `S1439 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputs@fp fp `*.30S1442  1 p 1 10 ]
-"19
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-{
-[v fputc@c c `i  1 p 2 0 ]
-[u S1439 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1442 _IO_FILE 12 `S1439 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.30S1442  1 p 1 2 ]
-"24
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\putch.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-"9
-} 0
-"1 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
-{
-[v abs@a a `i  1 p 2 6 ]
-"4
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 5 ]
-[v ___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 0 ]
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-"34
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-"41
-} 0
-"3 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\memset.c
-[v _memset memset `(*.30v  1 e 2 0 ]
-{
-"5
-[v memset@p p `*.30uc  1 a 1 5 ]
-"3
-[v memset@dest dest `*.30v  1 p 1 0 ]
-[v memset@c c `i  1 p 2 1 ]
-[v memset@n n `ui  1 p 2 3 ]
-"10
-} 0
-"146 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+"168 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
 [v _Welcom Welcom `(v  1 e 1 0 ]
 {
-"148
+"170
 [v Welcom@l_welcom_counter l_welcom_counter `uc  1 a 1 26 ]
-"167
+"189
 } 0
-"169
+"191
 [v _Set_Password Set_Password `(us  1 e 2 0 ]
 {
-"171
-[v Set_Password@Return_Value Return_Value `us  1 a 2 40 ]
-"172
-[v Set_Password@l_Counter l_Counter `uc  1 a 1 42 ]
-"196
+"195
+[v Set_Password@Keypad_Value Keypad_Value `[4]uc  1 a 4 41 ]
+"193
+[v Set_Password@Return_Value Return_Value `us  1 a 2 39 ]
+"194
+[v Set_Password@l_Counter l_Counter `uc  1 a 1 45 ]
+"218
+} 0
+"50 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"55
+} 0
+"55 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"94
+} 0
+"57 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"63
+} 0
+"220 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+[v _Read_Password_EEPROM Read_Password_EEPROM `(us  1 e 2 0 ]
+{
+"222
+[v Read_Password_EEPROM@Return_Value Return_Value `us  1 a 2 7 ]
+"230
+} 0
+"196 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/memory.c
+[v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
+{
+[v DATAEE_ReadByte@bAdd bAdd `us  1 p 2 0 ]
+"207
+} 0
+"173
+[v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
+{
+"175
+[v DATAEE_WriteByte@GIEBitValue GIEBitValue `uc  1 a 1 3 ]
+"173
+[v DATAEE_WriteByte@bAdd bAdd `us  1 p 2 0 ]
+[v DATAEE_WriteByte@bData bData `uc  1 p 1 2 ]
+"194
+} 0
+"232 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+[v _Check_Password Check_Password `(uc  1 e 1 0 ]
+{
+"236
+[v Check_Password@Keypad_Value Keypad_Value `[4]uc  1 a 4 42 ]
+"234
+[v Check_Password@Enter_Password Enter_Password `us  1 a 2 39 ]
+"237
+[v Check_Password@l_Counter l_Counter `uc  1 a 1 46 ]
+"235
+[v Check_Password@Ret_value Ret_value `uc  1 a 1 41 ]
+"232
+[v Check_Password@Password Password `us  1 p 2 29 ]
+"270
 } 0
 "260 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LCD/ecu_chr_lcd.c
 [v _lcd_4bit_send_string_data_pos lcd_4bit_send_string_data_pos `(uc  1 e 1 0 ]
 {
 "263
-[v lcd_4bit_send_string_data_pos@Ret Ret `uc  1 a 1 29 ]
+[v lcd_4bit_send_string_data_pos@Ret Ret `uc  1 a 1 28 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -813,7 +551,7 @@ GPIO_HIGH 1
 [v lcd_4bit_send_string_data_pos@lcd lcd `*.30CS88  1 p 1 24 ]
 [v lcd_4bit_send_string_data_pos@row row `uc  1 p 1 25 ]
 [v lcd_4bit_send_string_data_pos@coulmn coulmn `uc  1 p 1 26 ]
-[v lcd_4bit_send_string_data_pos@str_data str_data `*.35uc  1 p 2 27 ]
+[v lcd_4bit_send_string_data_pos@str_data str_data `*.31uc  1 p 1 27 ]
 "284
 } 0
 "1021
@@ -915,48 +653,10 @@ GPIO_HIGH 1
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"50 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/mcc.c
-[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-{
-"55
-} 0
-"55 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/pin_manager.c
-[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-{
-"94
-} 0
-"57 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/mcc.c
-[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-{
-"63
-} 0
-"198 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
-[v _Read_Password_EEPROM Read_Password_EEPROM `(us  1 e 2 0 ]
-{
-"200
-[v Read_Password_EEPROM@Return_Value Return_Value `us  1 a 2 7 ]
-"208
-} 0
-"196 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/memory.c
-[v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
-{
-[v DATAEE_ReadByte@bAdd bAdd `us  1 p 2 0 ]
-"207
-} 0
-"173
-[v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
-{
-"175
-[v DATAEE_WriteByte@GIEBitValue GIEBitValue `uc  1 a 1 3 ]
-"173
-[v DATAEE_WriteByte@bAdd bAdd `us  1 p 2 0 ]
-[v DATAEE_WriteByte@bData bData `uc  1 p 1 2 ]
-"194
-} 0
-"140 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+"160 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
 [v _APP_Init APP_Init `(v  1 e 1 0 ]
 {
-"145
+"167
 } 0
 "20 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LED/ecu_led.c
 [v _led_initialize led_initialize `(uc  1 e 1 0 ]
@@ -970,12 +670,12 @@ GPIO_HIGH 1
 [v led_initialize@pin_obj pin_obj `S24  1 a 1 14 ]
 "22
 [v led_initialize@ret ret `uc  1 a 1 13 ]
-[s S807 . 1 `uc 1 port_name 1 0 :4:0 
+[s S408 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin_name 1 0 :3:4 
 `uc 1 led_state 1 0 :1:7 
 ]
 "20
-[v led_initialize@led led `*.30CS807  1 p 1 11 ]
+[v led_initialize@led led `*.30CS408  1 p 1 11 ]
 "42
 } 0
 "32 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LCD/ecu_chr_lcd.c
@@ -1061,6 +761,29 @@ GPIO_HIGH 1
 [s S29 . 8 `[4]S24 1 keypad_row_pins 4 0 `[4]S24 1 keypad_col_pins 4 4 ]
 [v keypad_initialize@obj obj `*.30CS29  1 p 1 11 ]
 "58
+} 0
+"21 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/DC_MOTOR/ecu_dc_motor.c
+[v _dc_motor_initialize dc_motor_initialize `(uc  1 e 1 0 ]
+{
+[s S24 . 1 `uc 1 Pin 1 0 :3:0 
+`uc 1 Port 1 0 :3:3 
+`uc 1 Logic 1 0 :1:6 
+`uc 1 Direction 1 0 :1:7 
+]
+"41
+[v dc_motor_initialize@pin_2 pin_2 `S24  1 a 1 15 ]
+"32
+[v dc_motor_initialize@pin_1 pin_1 `S24  1 a 1 14 ]
+"23
+[v dc_motor_initialize@ret ret `uc  1 a 1 13 ]
+[s S913 . 1 `uc 1 dc_motor_port 1 0 :4:0 
+`uc 1 dc_motor_pin 1 0 :3:4 
+`uc 1 motor_status 1 0 :1:7 
+]
+"21
+[s S917 . 2 `[2]S913 1 dc_motor 2 0 ]
+[v dc_motor_initialize@obj obj `*.30CS917  1 p 1 11 ]
+"53
 } 0
 "219 D:\lap_interface\project\Smart_Home\smart_home_master.X\HAL/GPIO/hal_gpio.c
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]

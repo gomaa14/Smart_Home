@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "ECU/DC_MOTOR/ecu_dc_motor.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,259 +6,22 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 1 "./main.h" 1
-# 12 "./main.h"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
+# 1 "ECU/DC_MOTOR/ecu_dc_motor.c" 2
 
-extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 1 3
+# 1 "ECU/DC_MOTOR/ecu_dc_motor.h" 1
+# 16 "ECU/DC_MOTOR/ecu_dc_motor.h"
+# 1 "ECU/DC_MOTOR/ecu_dc_motor_cfg.h" 1
+# 16 "ECU/DC_MOTOR/ecu_dc_motor.h" 2
 
 
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 2 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int wchar_t;
-# 128 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 2 3
-
-int atoi (const char *);
-long atol (const char *);
-
-long long atoll (const char *);
-
-double atof (const char *);
-
-
-float strtof (const char *restrict, char **restrict);
-double strtod (const char *restrict, char **restrict);
-long double strtold (const char *restrict, char **restrict);
-
-
-
-long strtol (const char *restrict, char **restrict, int);
-unsigned long strtoul (const char *restrict, char **restrict, int);
-
-long long strtoll (const char *restrict, char **restrict, int);
-unsigned long long strtoull (const char *restrict, char **restrict, int);
-
-
-unsigned long __strtoxl(const char * s, char ** endptr, int base, char is_signed);
-
-unsigned long long __strtoxll(const char * s, char ** endptr, int base, char is_signed);
-# 55 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 3
-int rand (void);
-void srand (unsigned);
-
-void *malloc (size_t);
-void *calloc (size_t, size_t);
-void *realloc (void *, size_t);
-void free (void *);
-
-          void abort (void);
-int atexit (void (*) (void));
-          void exit (int);
-          void _Exit (int);
-
-void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
-
-
-
-
-
-
-
-__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
-
-int abs (int);
-long labs (long);
-
-long long llabs (long long);
-
-
-typedef struct { int quot, rem; } div_t;
-typedef struct { long quot, rem; } ldiv_t;
-
-typedef struct { long long quot, rem; } lldiv_t;
-
-
-div_t div (int, int);
-ldiv_t ldiv (long, long);
-
-lldiv_t lldiv (long long, long long);
-
-
-typedef struct { unsigned int quot, rem; } udiv_t;
-typedef struct { unsigned long quot, rem; } uldiv_t;
-udiv_t udiv (unsigned int, unsigned int);
-uldiv_t uldiv (unsigned long, unsigned long);
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\xc8debug.h" 2 3
-
-
-
-
-
-
-
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 23 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 2 3
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\builtins.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 1 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned __int24 uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-# 179 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 215 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 2 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\builtins.h" 2 3
-
-
-
-#pragma intrinsic(__nop)
-extern void __nop(void);
-
-#pragma intrinsic(__nopf000)
-extern void __nopf000(void);
-#pragma intrinsic(__nopffff)
-extern void __nopffff(void);
-#pragma intrinsic(__nop0000)
-extern void __nop0000(void);
-
-
-
-#pragma intrinsic(_delay)
-extern __attribute__((nonreentrant)) void _delay(uint32_t);
-#pragma intrinsic(_delaywdt)
-extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
-
-#pragma intrinsic(_delay3)
-extern __attribute__((nonreentrant)) void _delay3(uint8_t);
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 2 3
-# 33 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 3
-# 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 1 3
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\htc.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\htc.h" 2 3
-# 6 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 2 3
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18_chip_select.h" 1 3
-# 224 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18_chip_select.h" 3
+# 1 "ECU/DC_MOTOR/../../HAL/GPIO/hal_gpio.h" 1
+# 12 "ECU/DC_MOTOR/../../HAL/GPIO/hal_gpio.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\proc\\pic18f46k20.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\proc\\pic18f46k20.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\__at.h" 1 3
@@ -4920,7 +4683,260 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 225 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18_chip_select.h" 2 3
+# 12 "ECU/DC_MOTOR/../../HAL/GPIO/hal_gpio.h" 2
+
+
+# 1 "ECU/DC_MOTOR/../../HAL/GPIO/../mcal_std_types.h" 1
+# 18 "ECU/DC_MOTOR/../../HAL/GPIO/../mcal_std_types.h"
+# 1 "ECU/DC_MOTOR/../../HAL/GPIO/../compiler.h" 1
+# 15 "ECU/DC_MOTOR/../../HAL/GPIO/../compiler.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\xc8debug.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 2 3
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\features.h" 1 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int wchar_t;
+# 128 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 174 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 210 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __uint24 uint24_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 2 3
+
+int atoi (const char *);
+long atol (const char *);
+
+long long atoll (const char *);
+
+double atof (const char *);
+
+
+float strtof (const char *restrict, char **restrict);
+double strtod (const char *restrict, char **restrict);
+long double strtold (const char *restrict, char **restrict);
+
+
+
+long strtol (const char *restrict, char **restrict, int);
+unsigned long strtoul (const char *restrict, char **restrict, int);
+
+long long strtoll (const char *restrict, char **restrict, int);
+unsigned long long strtoull (const char *restrict, char **restrict, int);
+
+
+unsigned long __strtoxl(const char * s, char ** endptr, int base, char is_signed);
+
+unsigned long long __strtoxll(const char * s, char ** endptr, int base, char is_signed);
+# 55 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdlib.h" 3
+int rand (void);
+void srand (unsigned);
+
+void *malloc (size_t);
+void *calloc (size_t, size_t);
+void *realloc (void *, size_t);
+void free (void *);
+
+          void abort (void);
+int atexit (void (*) (void));
+          void exit (int);
+          void _Exit (int);
+
+void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+
+
+
+
+
+
+
+__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
+
+int abs (int);
+long labs (long);
+
+long long llabs (long long);
+
+
+typedef struct { int quot, rem; } div_t;
+typedef struct { long quot, rem; } ldiv_t;
+
+typedef struct { long long quot, rem; } lldiv_t;
+
+
+div_t div (int, int);
+ldiv_t ldiv (long, long);
+
+lldiv_t lldiv (long long, long long);
+
+
+typedef struct { unsigned int quot, rem; } udiv_t;
+typedef struct { unsigned long quot, rem; } uldiv_t;
+udiv_t udiv (unsigned int, unsigned int);
+uldiv_t uldiv (unsigned long, unsigned long);
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\xc8debug.h" 2 3
+
+
+
+
+
+
+
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 23 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 2 3
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\builtins.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 1 3
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 133 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned __int24 uintptr_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 intptr_t;
+# 164 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 179 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 194 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 215 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 235 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 27 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 149 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdint.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\builtins.h" 2 3
+
+
+
+#pragma intrinsic(__nop)
+extern void __nop(void);
+
+#pragma intrinsic(__nopf000)
+extern void __nopf000(void);
+#pragma intrinsic(__nopffff)
+extern void __nopffff(void);
+#pragma intrinsic(__nop0000)
+extern void __nop0000(void);
+
+
+
+#pragma intrinsic(_delay)
+extern __attribute__((nonreentrant)) void _delay(uint32_t);
+#pragma intrinsic(_delaywdt)
+extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
+
+#pragma intrinsic(_delay3)
+extern __attribute__((nonreentrant)) void _delay3(uint8_t);
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 2 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 3
+# 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 1 3
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\htc.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\htc.h" 2 3
+# 6 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 2 3
+
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18_chip_select.h" 1 3
 # 9 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 2 3
 # 19 "C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\\pic\\include\\pic18.h" 3
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
@@ -4942,29 +4958,11 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 15 "ECU/DC_MOTOR/../../HAL/GPIO/../compiler.h" 2
+# 18 "ECU/DC_MOTOR/../../HAL/GPIO/../mcal_std_types.h" 2
 
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 89 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 101 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\conio.h" 1 3
-
-
-
-
-
-
+# 1 "ECU/DC_MOTOR/../../HAL/GPIO/../std_libraries.h" 1
+# 15 "ECU/DC_MOTOR/../../HAL/GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5117,44 +5115,11 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\conio.h" 2 3
-# 54 "./mcc_generated_files/mcc.h" 2
+# 15 "ECU/DC_MOTOR/../../HAL/GPIO/../std_libraries.h" 2
 
-# 1 "./mcc_generated_files/memory.h" 1
-# 99 "./mcc_generated_files/memory.h"
-uint8_t FLASH_ReadByte(uint32_t flashAddr);
-# 125 "./mcc_generated_files/memory.h"
-uint16_t FLASH_ReadWord(uint32_t flashAddr);
-# 157 "./mcc_generated_files/memory.h"
-void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
-# 193 "./mcc_generated_files/memory.h"
-int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
-# 218 "./mcc_generated_files/memory.h"
-void FLASH_EraseBlock(uint32_t baseAddr);
-# 249 "./mcc_generated_files/memory.h"
-void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
-# 275 "./mcc_generated_files/memory.h"
-uint8_t DATAEE_ReadByte(uint16_t bAdd);
 
-void MEMORY_Tasks(void);
-# 55 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 12 "./main.h" 2
 
-# 1 "./ECU/KEYPAD/ecu_keypad.h" 1
-# 16 "./ECU/KEYPAD/ecu_keypad.h"
-# 1 "./ECU/KEYPAD/../../HAL/GPIO/hal_gpio.h" 1
-# 14 "./ECU/KEYPAD/../../HAL/GPIO/hal_gpio.h"
-# 1 "./ECU/KEYPAD/../../HAL/GPIO/../mcal_std_types.h" 1
-# 18 "./ECU/KEYPAD/../../HAL/GPIO/../mcal_std_types.h"
-# 1 "./ECU/KEYPAD/../../HAL/GPIO/../compiler.h" 1
-# 18 "./ECU/KEYPAD/../../HAL/GPIO/../mcal_std_types.h" 2
 
-# 1 "./ECU/KEYPAD/../../HAL/GPIO/../std_libraries.h" 1
-# 19 "./ECU/KEYPAD/../../HAL/GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5212,9 +5177,9 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 19 "./ECU/KEYPAD/../../HAL/GPIO/../std_libraries.h" 2
-# 19 "./ECU/KEYPAD/../../HAL/GPIO/../mcal_std_types.h" 2
-# 54 "./ECU/KEYPAD/../../HAL/GPIO/../mcal_std_types.h"
+# 19 "ECU/DC_MOTOR/../../HAL/GPIO/../std_libraries.h" 2
+# 19 "ECU/DC_MOTOR/../../HAL/GPIO/../mcal_std_types.h" 2
+# 54 "ECU/DC_MOTOR/../../HAL/GPIO/../mcal_std_types.h"
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef unsigned int uint32;
@@ -5227,16 +5192,16 @@ typedef float float32;
 typedef double float64;
 
 typedef uint8 Std_ReturnType;
-# 14 "./ECU/KEYPAD/../../HAL/GPIO/hal_gpio.h" 2
+# 14 "ECU/DC_MOTOR/../../HAL/GPIO/hal_gpio.h" 2
 
 
-# 1 "./ECU/KEYPAD/../../HAL/GPIO/../device_config.h" 1
-# 16 "./ECU/KEYPAD/../../HAL/GPIO/hal_gpio.h" 2
+# 1 "ECU/DC_MOTOR/../../HAL/GPIO/../device_config.h" 1
+# 16 "ECU/DC_MOTOR/../../HAL/GPIO/hal_gpio.h" 2
 
 
-# 1 "./ECU/KEYPAD/../../HAL/GPIO/hal_gpio_cfg.h" 1
-# 18 "./ECU/KEYPAD/../../HAL/GPIO/hal_gpio.h" 2
-# 48 "./ECU/KEYPAD/../../HAL/GPIO/hal_gpio.h"
+# 1 "ECU/DC_MOTOR/../../HAL/GPIO/hal_gpio_cfg.h" 1
+# 18 "ECU/DC_MOTOR/../../HAL/GPIO/hal_gpio.h" 2
+# 48 "ECU/DC_MOTOR/../../HAL/GPIO/hal_gpio.h"
 typedef enum
 {
     GPIO_LOW=0,
@@ -5283,7 +5248,7 @@ typedef struct
     uint8 Direction :1;
 
 }pin_config_t;
-# 102 "./ECU/KEYPAD/../../HAL/GPIO/hal_gpio.h"
+# 102 "ECU/DC_MOTOR/../../HAL/GPIO/hal_gpio.h"
 Std_ReturnType gpio_pin_direction_initialize(const pin_config_t* pin_config);
 Std_ReturnType gpio_pin_get_direction_status(const pin_config_t* pin_config, direction_t* direction_status);
 Std_ReturnType gpio_pin_write_logic(const pin_config_t* pin_config, logic_t logic);
@@ -5301,122 +5266,8 @@ Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
 Std_ReturnType gpio_port_initialize(port_index_t port, uint8 direction, uint8 logic);
-# 16 "./ECU/KEYPAD/ecu_keypad.h" 2
-
-# 1 "./ECU/KEYPAD/ecu_keypad_cfg.h" 1
-# 17 "./ECU/KEYPAD/ecu_keypad.h" 2
-# 34 "./ECU/KEYPAD/ecu_keypad.h"
-typedef struct
-{
-    pin_config_t keypad_row_pins[4];
-    pin_config_t keypad_col_pins[4];
-
-}keypad_t;
-
-
-
-
-Std_ReturnType keypad_initialize(const keypad_t* obj);
-
-Std_ReturnType keypad_get_value(const keypad_t* obj, uint8* value);
-# 13 "./main.h" 2
-
-# 1 "./ECU/LCD/ecu_chr_lcd.h" 1
-# 16 "./ECU/LCD/ecu_chr_lcd.h"
-# 1 "./ECU/LCD/ecu_chr_lcd_cfg.h" 1
-# 16 "./ECU/LCD/ecu_chr_lcd.h" 2
-# 68 "./ECU/LCD/ecu_chr_lcd.h"
-typedef struct
-{
-    pin_config_t lcd_data[4];
-    pin_config_t lcd_rs;
-    pin_config_t lcd_en;
-
-}chr_lcd_4bit_t;
-
-typedef struct
-{
-    pin_config_t lcd_data[8];
-    pin_config_t lcd_rs;
-    pin_config_t lcd_en;
-
-}chr_lcd_8bit_t;
-
-
-
-
-
-
-
-Std_ReturnType lcd_4bit_initialze(const chr_lcd_4bit_t* lcd);
-Std_ReturnType lcd_4bit_send_command(const chr_lcd_4bit_t* lcd, uint8 command);
-Std_ReturnType lcd_4bit_send_char_data(const chr_lcd_4bit_t* lcd, uint8 data);
-Std_ReturnType lcd_4bit_send_char_data_pos(const chr_lcd_4bit_t* lcd, uint8 row, uint8 coulmn, uint8 data);
-Std_ReturnType lcd_4bit_send_string_data(const chr_lcd_4bit_t* lcd, uint8* str_data);
-Std_ReturnType lcd_4bit_send_string_data_pos(const chr_lcd_4bit_t* lcd, uint8 row, uint8 coulmn, uint8* str_data);
-Std_ReturnType lcd_4bit_send_custome_char(const chr_lcd_4bit_t* lcd, uint8 row, uint8 coulmn,
-                                         const uint8 _chr[], uint8 mem_pos);
-
-
-
-
-Std_ReturnType lcd_8bit_initialze(const chr_lcd_8bit_t* lcd);
-Std_ReturnType lcd_8bit_send_command(const chr_lcd_8bit_t* lcd, uint8 command);
-Std_ReturnType lcd_8bit_send_char_data(const chr_lcd_8bit_t* lcd, uint8 data);
-Std_ReturnType lcd_8bit_send_char_data_pos(const chr_lcd_8bit_t* lcd, uint8 row, uint8 coulmn, uint8 data);
-Std_ReturnType lcd_8bit_send_string_data(const chr_lcd_8bit_t* lcd, uint8* str_data);
-Std_ReturnType lcd_8bit_send_string_data_pos(const chr_lcd_8bit_t* lcd, uint8 row, uint8 coulmn, uint8* str_data);
-Std_ReturnType lcd_8bit_send_custome_char(const chr_lcd_8bit_t* lcd, uint8 row, uint8 coulmn,
-                                         const uint8 _chr[], uint8 mem_pos);
-
-
-
-
-Std_ReturnType convert_uint8_to_string(uint8 value, uint8* str);
-Std_ReturnType convert_uint16_to_string(uint16 value, uint8* str);
-Std_ReturnType convert_uint32_to_string(uint32 value, uint8* str);
-
-Std_ReturnType convert_float32_to_string(float32 value, uint8* str);
-Std_ReturnType convert_float64_to_string(float64 value, uint8* str);
-# 14 "./main.h" 2
-
-# 1 "./ECU/LED/ecu_led.h" 1
-# 18 "./ECU/LED/ecu_led.h"
-# 1 "./ECU/LED/ecu_led_cfg.h" 1
-# 18 "./ECU/LED/ecu_led.h" 2
-# 31 "./ECU/LED/ecu_led.h"
-typedef enum
-{
-    LED_OFF =0,
-    LED_ON
-}led_status_t;
-
-typedef struct
-{
-    uint8 port_name :4;
-    uint8 pin_name :3;
-    uint8 led_state :1;
-
-}led_t;
-
-
-
-
-
-Std_ReturnType led_initialize(const led_t *led);
-
-Std_ReturnType led_on(const led_t *led);
-
-Std_ReturnType led_off(const led_t *led);
-
-Std_ReturnType led_toggle(const led_t *led);
-# 15 "./main.h" 2
-
-# 1 "./ECU/DC_MOTOR/ecu_dc_motor.h" 1
-# 16 "./ECU/DC_MOTOR/ecu_dc_motor.h"
-# 1 "./ECU/DC_MOTOR/ecu_dc_motor_cfg.h" 1
-# 16 "./ECU/DC_MOTOR/ecu_dc_motor.h" 2
-# 41 "./ECU/DC_MOTOR/ecu_dc_motor.h"
+# 18 "ECU/DC_MOTOR/ecu_dc_motor.h" 2
+# 41 "ECU/DC_MOTOR/ecu_dc_motor.h"
 typedef struct
 {
     uint8 dc_motor_port :4;
@@ -5443,288 +5294,131 @@ Std_ReturnType dc_motor_move_right(const dc_motor_t* obj);
 Std_ReturnType dc_motor_move_left(const dc_motor_t* obj);
 
 Std_ReturnType dc_motor_stop(const dc_motor_t* obj);
-# 16 "./main.h" 2
-
-
-
-
-
-
-
-
-void APP_Init(void);
-void Welcom(void);
-uint16 Set_Password(void);
-uint16 Read_Password_EEPROM(void);
-uint8 Check_Password(uint16 Password);
-# 1 "main.c" 2
-
-
-led_t led_1 = {.port_name = PORTA_INDEX, .pin_name =PIN0, .led_state = LED_OFF};
-
-chr_lcd_4bit_t lcd1 = {
-    .lcd_rs.Port =PORTD_INDEX,
-    .lcd_rs.Pin = PIN0,
-    .lcd_rs.Direction = GPIO_OUTPUT,
-    .lcd_rs.Logic = GPIO_LOW,
-
-    .lcd_en.Port =PORTD_INDEX,
-    .lcd_en.Pin = PIN1,
-    .lcd_en.Direction =GPIO_OUTPUT,
-    .lcd_en.Logic = GPIO_LOW,
-
-    .lcd_data[0].Port =PORTD_INDEX,
-    .lcd_data[0].Pin = PIN2,
-    .lcd_data[0].Direction =GPIO_OUTPUT,
-    .lcd_data[0].Logic =GPIO_LOW,
-    .lcd_data[1].Port =PORTD_INDEX,
-    .lcd_data[1].Pin = PIN3,
-    .lcd_data[1].Direction =GPIO_OUTPUT,
-    .lcd_data[1].Logic =GPIO_LOW,
-    .lcd_data[2].Port =PORTD_INDEX,
-    .lcd_data[2].Pin = PIN4,
-    .lcd_data[2].Direction =GPIO_OUTPUT,
-    .lcd_data[2].Logic =GPIO_LOW,
-    .lcd_data[3].Port =PORTD_INDEX,
-    .lcd_data[3].Pin = PIN5,
-    .lcd_data[3].Direction =GPIO_OUTPUT,
-    .lcd_data[3].Logic =GPIO_LOW
-
-
-};
-
-keypad_t key1 = {
-    .keypad_row_pins[0].Port=PORTD_INDEX,
-    .keypad_row_pins[0].Pin =PIN6,
-    .keypad_row_pins[0].Direction=GPIO_OUTPUT,
-    .keypad_row_pins[0].Logic=GPIO_LOW,
-
-    .keypad_row_pins[1].Port=PORTD_INDEX,
-    .keypad_row_pins[1].Pin=PIN7,
-    .keypad_row_pins[1].Direction=GPIO_OUTPUT,
-    .keypad_row_pins[1].Logic=GPIO_LOW,
-
-    .keypad_row_pins[2].Port=PORTE_INDEX,
-    .keypad_row_pins[2].Pin=PIN0,
-    .keypad_row_pins[2].Direction=GPIO_OUTPUT,
-    .keypad_row_pins[2].Logic=GPIO_LOW,
-
-    .keypad_row_pins[3].Port=PORTE_INDEX,
-    .keypad_row_pins[3].Pin=PIN1,
-    .keypad_row_pins[3].Direction=GPIO_OUTPUT,
-    .keypad_row_pins[3].Logic=GPIO_LOW,
-
-
-    .keypad_col_pins[0].Port=PORTC_INDEX,
-    .keypad_col_pins[0].Pin=PIN0,
-    .keypad_col_pins[0].Direction=GPIO_INPUT,
-    .keypad_col_pins[0].Logic=GPIO_LOW,
-
-    .keypad_col_pins[1].Port=PORTB_INDEX,
-    .keypad_col_pins[1].Pin=PIN5,
-    .keypad_col_pins[1].Direction=GPIO_INPUT,
-    .keypad_col_pins[1].Logic=GPIO_LOW,
-
-    .keypad_col_pins[2].Port=PORTB_INDEX,
-    .keypad_col_pins[2].Pin=PIN6,
-    .keypad_col_pins[2].Direction=GPIO_INPUT,
-    .keypad_col_pins[2].Logic=GPIO_LOW,
-
-    .keypad_col_pins[3].Port=PORTB_INDEX,
-    .keypad_col_pins[3].Pin=PIN7,
-    .keypad_col_pins[3].Direction=GPIO_INPUT,
-    .keypad_col_pins[3].Logic=GPIO_LOW
-
-};
-
-dc_motor_t motor_1 = {.dc_motor[0].dc_motor_port = PORTA_INDEX,
-                      .dc_motor[0].dc_motor_pin = PIN1,
-                      .dc_motor[0].motor_status = 0X00,
-                      .dc_motor[1].dc_motor_port = PORTA_INDEX,
-                      .dc_motor[1].dc_motor_pin = PIN2,
-                      .dc_motor[1].motor_status = 0X00
-};
-
-
-Std_ReturnType ret = (Std_ReturnType)0X00;
-
-uint8 Program_Count = 0;
-static uint16 Password = 0;
-uint8 Password_text[6];
-uint8 password_check = 0x00;
-
-void main(void)
+# 8 "ECU/DC_MOTOR/ecu_dc_motor.c" 2
+# 21 "ECU/DC_MOTOR/ecu_dc_motor.c"
+Std_ReturnType dc_motor_initialize(const dc_motor_t* obj)
 {
-    DATAEE_WriteByte(0x0000, 0xFF);
+    Std_ReturnType ret = (Std_ReturnType)0X01;
 
-    SYSTEM_Initialize();
-    APP_Init();
-
-    Welcom();
-
-    Program_Count = DATAEE_ReadByte(0x0000);
-
-    if (Program_Count == 0xFF)
+    if(((void*)0) == obj)
     {
-        Password = Set_Password();
-
-        DATAEE_WriteByte(0x0120, (uint8)Password);
-        DATAEE_WriteByte(0x0121, (uint8)( (Password >> 8) &0x0F));
-        Program_Count = 1;
+        ret = (Std_ReturnType)0X00;
     }
-    else if (Program_Count == 0xFE)
-    {
-        Password = Read_Password_EEPROM();
 
-        Program_Count = 0;
-    }
     else
     {
-        Password = Read_Password_EEPROM();
-        Program_Count++;
+        pin_config_t pin_1;
+        pin_1.Pin = obj->dc_motor[0].dc_motor_pin;
+        pin_1.Port = obj->dc_motor[0].dc_motor_port;
+        pin_1.Direction = GPIO_OUTPUT;
+        pin_1.Logic = obj->dc_motor[0].motor_status;
+
+
+        ret = gpio_pin_initialize(&pin_1);
+
+        pin_config_t pin_2;
+        pin_2.Pin = obj->dc_motor[1].dc_motor_pin;
+        pin_2.Port = obj->dc_motor[1].dc_motor_port;
+        pin_2.Direction = GPIO_OUTPUT;
+        pin_2.Logic = obj->dc_motor[1].motor_status;
+
+        ret = gpio_pin_initialize(&pin_2);
+
     }
 
-    DATAEE_WriteByte(0x0000, Program_Count);
+    return ret;
 
+}
+# 63 "ECU/DC_MOTOR/ecu_dc_motor.c"
+Std_ReturnType dc_motor_move_right(const dc_motor_t* obj)
+{
+    Std_ReturnType ret = (Std_ReturnType)0X01;
 
-    password_check = Check_Password(Password);
-
-    while (1)
+    if(((void*)0) == obj)
     {
-
-        if (password_check == 0x01)
-        {
-            ret = lcd_4bit_send_command(&lcd1, 0X01);
-            ret = lcd_4bit_send_string_data_pos(&lcd1, 1, 1, "Correct Password");
-            ret = led_on(&led_1);
-            ret = dc_motor_move_right(&motor_1);
-            _delay((unsigned long)((5000)*(8000000/4000.0)));
-            ret = dc_motor_stop(&motor_1);
-            password_check = 0x02;
-        }
-        else if (password_check == 0x00 )
-        {
-            ret = lcd_4bit_send_command(&lcd1, 0X01);
-            ret = lcd_4bit_send_string_data_pos(&lcd1, 1, 6, "InCorrect Password");
-            ret = lcd_4bit_send_string_data_pos(&lcd1, 2, 6, "Try again");
-            ret = led_off(&led_1);
-            ret = dc_motor_stop(&motor_1);
-            _delay((unsigned long)((2000)*(8000000/4000.0)));
-            password_check = Check_Password(Password);
-        }
-        else{ }
-
-
-    }
-}
-void APP_Init(void)
-{
-    ret = lcd_4bit_initialze(&lcd1);
-    ret = keypad_initialize(&key1);
-    ret = led_initialize(&led_1);
-    ret = dc_motor_initialize(&motor_1);
-
-}
-void Welcom(void)
-{
- uint8 l_welcom_counter = 0;
-
-    ret = lcd_4bit_send_string_data(&lcd1, " Welcom");
-    _delay((unsigned long)((100)*(8000000/4000.0)));
- for(l_welcom_counter =0; l_welcom_counter<12; l_welcom_counter++)
- {
-  ret = lcd_4bit_send_command(&lcd1, 0X1C);
-  _delay((unsigned long)((100)*(8000000/4000.0)));
- }
-
- for(l_welcom_counter =0; l_welcom_counter<12; l_welcom_counter++)
- {
-  ret = lcd_4bit_send_command(&lcd1, 0X18);
-  _delay((unsigned long)((100)*(8000000/4000.0)));
-
- }
-
-    ret = lcd_4bit_send_command(&lcd1, 0X01);
-    ret = lcd_4bit_send_command(&lcd1, 0X02);
-}
-
-uint16 Set_Password(void)
-{
-    uint16 Return_Value = 0;
-    uint8 l_Counter = 0;
-    uint8 Keypad_Value[4] = {0};
-    ret = lcd_4bit_send_string_data(&lcd1, "PLease Set Password");
-    ret = lcd_4bit_send_string_data_pos(&lcd1, 2, 7, " ");
-    ret = lcd_4bit_send_command(&lcd1,0X0E);
-
-
-    while(l_Counter < 4)
-    {
-
-        ret = keypad_get_value(&key1, &(Keypad_Value[l_Counter]));
-
-        if (Keypad_Value[l_Counter] != 0)
-        {
-            ret = lcd_4bit_send_string_data(&lcd1, "*");
-            l_Counter++;
-            _delay((unsigned long)((250)*(8000000/4000.0)));
-        }
-
+        ret = (Std_ReturnType)0X00;
     }
 
-    Return_Value = (Keypad_Value[3]- 48)+ (Keypad_Value[2]- 48)*10 + (Keypad_Value[1]- 48)*100 + (Keypad_Value[0]- 48) *1000;
-
-    return Return_Value;
-}
-
-uint16 Read_Password_EEPROM(void)
-{
-    uint16 Return_Value = 0;
-
-    Return_Value = (uint8)DATAEE_ReadByte(0x0120);
-
-    Return_Value |= (uint16)( DATAEE_ReadByte(0x0121) << 8 );
-
-    return Return_Value;
-
-}
-
-uint8 Check_Password(uint16 Password)
-{
-    uint16 Enter_Password;
-    uint8 Ret_value = 0x00;
-    uint8 Keypad_Value[4] = {0};
-    uint8 l_Counter = 0;
-    ret = lcd_4bit_send_command(&lcd1, 0X01);
-    ret = lcd_4bit_send_command(&lcd1, 0X02);
-
-    ret = lcd_4bit_send_string_data(&lcd1, "Please Enter Pass");
-    ret = lcd_4bit_send_string_data_pos(&lcd1, 2, 7, " ");
-    ret = lcd_4bit_send_command(&lcd1,0X0E);
-
-    while(l_Counter < 4)
-    {
-        ret = keypad_get_value(&key1, &(Keypad_Value[l_Counter]));
-        if (Keypad_Value[l_Counter] != 0)
-        {
-            ret = lcd_4bit_send_string_data(&lcd1, &(Keypad_Value[l_Counter]));
-            l_Counter++;
-            _delay((unsigned long)((250)*(8000000/4000.0)));
-        }
-
-    }
-
-    Enter_Password = (Keypad_Value[3]- 48)+ (Keypad_Value[2]- 48)*10 + (Keypad_Value[1]- 48)*100 + (Keypad_Value[0]- 48) *1000;
-
-    if(Password == Enter_Password)
-    {
-        Ret_value = 0x01;
-    }
     else
     {
-        Ret_value = 0x00;
+        pin_config_t pin_1;
+        pin_1.Pin = obj->dc_motor[0].dc_motor_pin;
+        pin_1.Port = obj->dc_motor[0].dc_motor_port;
+        pin_1.Direction = GPIO_OUTPUT;
+        pin_1.Logic = obj->dc_motor[0].motor_status;
+
+        pin_config_t pin_2;
+        pin_2.Pin = obj->dc_motor[1].dc_motor_pin;
+        pin_2.Port = obj->dc_motor[1].dc_motor_port;
+        pin_2.Direction = GPIO_OUTPUT;
+        pin_2.Logic = obj->dc_motor[1].motor_status;
+
+        ret = gpio_pin_write_logic(&pin_1, GPIO_HIGH);
+        ret = gpio_pin_write_logic(&pin_2, GPIO_LOW);
     }
 
-    return Ret_value;
+    return ret;
+
+}
+# 101 "ECU/DC_MOTOR/ecu_dc_motor.c"
+Std_ReturnType dc_motor_move_left(const dc_motor_t* obj)
+{
+    Std_ReturnType ret = (Std_ReturnType)0X01;
+
+    if(((void*)0) == obj)
+    {
+        ret = (Std_ReturnType)0X00;
+    }
+
+    else
+    {
+        pin_config_t pin_1;
+        pin_1.Pin = obj->dc_motor[0].dc_motor_pin;
+        pin_1.Port = obj->dc_motor[0].dc_motor_port;
+        pin_1.Direction = GPIO_OUTPUT;
+        pin_1.Logic = obj->dc_motor[0].motor_status;
+
+        pin_config_t pin_2;
+        pin_2.Pin = obj->dc_motor[1].dc_motor_pin;
+        pin_2.Port = obj->dc_motor[1].dc_motor_port;
+        pin_2.Direction = GPIO_OUTPUT;
+        pin_2.Logic = obj->dc_motor[1].motor_status;
+
+        ret = gpio_pin_write_logic(&pin_1, GPIO_LOW);
+        ret = gpio_pin_write_logic(&pin_2, GPIO_HIGH);
+    }
+
+    return ret;
+
+}
+# 139 "ECU/DC_MOTOR/ecu_dc_motor.c"
+Std_ReturnType dc_motor_stop(const dc_motor_t* obj)
+{
+    Std_ReturnType ret = (Std_ReturnType)0X01;
+
+    if(((void*)0) == obj)
+    {
+        ret = (Std_ReturnType)0X00;
+    }
+
+    else
+    {
+        pin_config_t pin_1;
+        pin_1.Pin = obj->dc_motor[0].dc_motor_pin;
+        pin_1.Port = obj->dc_motor[0].dc_motor_port;
+        pin_1.Direction = GPIO_OUTPUT;
+        pin_1.Logic = obj->dc_motor[0].motor_status;
+
+        pin_config_t pin_2;
+        pin_2.Pin = obj->dc_motor[1].dc_motor_pin;
+        pin_2.Port = obj->dc_motor[1].dc_motor_port;
+        pin_2.Direction = GPIO_OUTPUT;
+        pin_2.Logic = obj->dc_motor[1].motor_status;
+
+       ret = gpio_pin_write_logic(&pin_1, GPIO_LOW);
+        ret = gpio_pin_write_logic(&pin_2, GPIO_LOW);
+    }
+
+    return ret;
 
 }
