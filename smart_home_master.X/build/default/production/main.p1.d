@@ -16,4 +16,6 @@ ECU/KEYPAD/ecu_keypad_cfg.h  \
 ECU/LCD/ecu_chr_lcd.h  \
 ECU/LCD/ecu_chr_lcd_cfg.h  \
 ECU/LED/ecu_led.h  \
-ECU/LED/ecu_led_cfg.h 
+ECU/LED/ecu_led_cfg.h  \
+ECU/DC_MOTOR/ecu_dc_motor.h  \
+ECU/DC_MOTOR/ecu_dc_motor_cfg.h 

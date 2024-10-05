@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ECU/KEYPAD/ecu_keypad.c ECU/LCD/ecu_chr_lcd.c HAL/GPIO/hal_gpio.c HAL/device_config.c mcc_generated_files/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/memory.c main.c ECU/LED/ecu_led.c
+SOURCEFILES_QUOTED_IF_SPACED=ECU/KEYPAD/ecu_keypad.c ECU/LCD/ecu_chr_lcd.c ECU/LED/ecu_led.c HAL/GPIO/hal_gpio.c HAL/device_config.c mcc_generated_files/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/memory.c main.c ECU/DC_MOTOR/ecu_dc_motor.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ECU/KEYPAD/ecu_keypad.p1 ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1 ${OBJECTDIR}/HAL/GPIO/hal_gpio.p1 ${OBJECTDIR}/HAL/device_config.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/memory.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/ECU/LED/ecu_led.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ECU/KEYPAD/ecu_keypad.p1.d ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1.d ${OBJECTDIR}/HAL/GPIO/hal_gpio.p1.d ${OBJECTDIR}/HAL/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/memory.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/ECU/LED/ecu_led.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ECU/KEYPAD/ecu_keypad.p1 ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1 ${OBJECTDIR}/ECU/LED/ecu_led.p1 ${OBJECTDIR}/HAL/GPIO/hal_gpio.p1 ${OBJECTDIR}/HAL/device_config.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/memory.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/ECU/KEYPAD/ecu_keypad.p1.d ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1.d ${OBJECTDIR}/ECU/LED/ecu_led.p1.d ${OBJECTDIR}/HAL/GPIO/hal_gpio.p1.d ${OBJECTDIR}/HAL/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/memory.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ECU/KEYPAD/ecu_keypad.p1 ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1 ${OBJECTDIR}/HAL/GPIO/hal_gpio.p1 ${OBJECTDIR}/HAL/device_config.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/memory.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/ECU/LED/ecu_led.p1
+OBJECTFILES=${OBJECTDIR}/ECU/KEYPAD/ecu_keypad.p1 ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1 ${OBJECTDIR}/ECU/LED/ecu_led.p1 ${OBJECTDIR}/HAL/GPIO/hal_gpio.p1 ${OBJECTDIR}/HAL/device_config.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/memory.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1
 
 # Source Files
-SOURCEFILES=ECU/KEYPAD/ecu_keypad.c ECU/LCD/ecu_chr_lcd.c HAL/GPIO/hal_gpio.c HAL/device_config.c mcc_generated_files/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/memory.c main.c ECU/LED/ecu_led.c
+SOURCEFILES=ECU/KEYPAD/ecu_keypad.c ECU/LCD/ecu_chr_lcd.c ECU/LED/ecu_led.c HAL/GPIO/hal_gpio.c HAL/device_config.c mcc_generated_files/pin_manager.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/memory.c main.c ECU/DC_MOTOR/ecu_dc_motor.c
 
 
 
@@ -103,6 +103,14 @@ ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1: ECU/LCD/ecu_chr_lcd.c  nbproject/Makefile-$
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1 ECU/LCD/ecu_chr_lcd.c 
 	@-${MV} ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.d ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/ECU/LED/ecu_led.p1: ECU/LED/ecu_led.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECU/LED" 
+	@${RM} ${OBJECTDIR}/ECU/LED/ecu_led.p1.d 
+	@${RM} ${OBJECTDIR}/ECU/LED/ecu_led.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECU/LED/ecu_led.p1 ECU/LED/ecu_led.c 
+	@-${MV} ${OBJECTDIR}/ECU/LED/ecu_led.d ${OBJECTDIR}/ECU/LED/ecu_led.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECU/LED/ecu_led.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/HAL/GPIO/hal_gpio.p1: HAL/GPIO/hal_gpio.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/HAL/GPIO" 
@@ -160,13 +168,13 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ECU/LED/ecu_led.p1: ECU/LED/ecu_led.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/ECU/LED" 
-	@${RM} ${OBJECTDIR}/ECU/LED/ecu_led.p1.d 
-	@${RM} ${OBJECTDIR}/ECU/LED/ecu_led.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECU/LED/ecu_led.p1 ECU/LED/ecu_led.c 
-	@-${MV} ${OBJECTDIR}/ECU/LED/ecu_led.d ${OBJECTDIR}/ECU/LED/ecu_led.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ECU/LED/ecu_led.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1: ECU/DC_MOTOR/ecu_dc_motor.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECU/DC_MOTOR" 
+	@${RM} ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1.d 
+	@${RM} ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1 ECU/DC_MOTOR/ecu_dc_motor.c 
+	@-${MV} ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.d ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/ECU/KEYPAD/ecu_keypad.p1: ECU/KEYPAD/ecu_keypad.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -184,6 +192,14 @@ ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1: ECU/LCD/ecu_chr_lcd.c  nbproject/Makefile-$
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1 ECU/LCD/ecu_chr_lcd.c 
 	@-${MV} ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.d ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ECU/LCD/ecu_chr_lcd.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/ECU/LED/ecu_led.p1: ECU/LED/ecu_led.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECU/LED" 
+	@${RM} ${OBJECTDIR}/ECU/LED/ecu_led.p1.d 
+	@${RM} ${OBJECTDIR}/ECU/LED/ecu_led.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECU/LED/ecu_led.p1 ECU/LED/ecu_led.c 
+	@-${MV} ${OBJECTDIR}/ECU/LED/ecu_led.d ${OBJECTDIR}/ECU/LED/ecu_led.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECU/LED/ecu_led.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/HAL/GPIO/hal_gpio.p1: HAL/GPIO/hal_gpio.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/HAL/GPIO" 
@@ -241,13 +257,13 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ECU/LED/ecu_led.p1: ECU/LED/ecu_led.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/ECU/LED" 
-	@${RM} ${OBJECTDIR}/ECU/LED/ecu_led.p1.d 
-	@${RM} ${OBJECTDIR}/ECU/LED/ecu_led.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECU/LED/ecu_led.p1 ECU/LED/ecu_led.c 
-	@-${MV} ${OBJECTDIR}/ECU/LED/ecu_led.d ${OBJECTDIR}/ECU/LED/ecu_led.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ECU/LED/ecu_led.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1: ECU/DC_MOTOR/ecu_dc_motor.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/ECU/DC_MOTOR" 
+	@${RM} ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1.d 
+	@${RM} ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1 ECU/DC_MOTOR/ecu_dc_motor.c 
+	@-${MV} ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.d ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ECU/DC_MOTOR/ecu_dc_motor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

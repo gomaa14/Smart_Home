@@ -5,6 +5,10 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="ECU" displayName="ECU" projectFiles="true">
+        <logicalFolder name="DC_MOTOR" displayName="DC_MOTOR" projectFiles="true">
+          <itemPath>ECU/DC_MOTOR/ecu_dc_motor.h</itemPath>
+          <itemPath>ECU/DC_MOTOR/ecu_dc_motor_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="KEYPAD" displayName="KEYPAD" projectFiles="true">
           <itemPath>ECU/KEYPAD/ecu_keypad.h</itemPath>
           <itemPath>ECU/KEYPAD/ecu_keypad_cfg.h</itemPath>
@@ -52,6 +56,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="ECU" displayName="ECU" projectFiles="true">
+        <logicalFolder name="DC_MOTOR" displayName="DC_MOTOR" projectFiles="true">
+          <itemPath>ECU/DC_MOTOR/ecu_dc_motor.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="KEYPAD" displayName="KEYPAD" projectFiles="true">
           <itemPath>ECU/KEYPAD/ecu_keypad.c</itemPath>
         </logicalFolder>
