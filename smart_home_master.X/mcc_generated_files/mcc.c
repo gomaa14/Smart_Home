@@ -50,8 +50,11 @@
 void SYSTEM_Initialize(void)
 {
 
+    INTERRUPT_Initialize();
+    SPI_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+    EUSART_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

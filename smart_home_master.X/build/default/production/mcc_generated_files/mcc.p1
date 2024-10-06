@@ -1,10 +1,19 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"89 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 89: void PIN_MANAGER_Initialize (void);
+"110 mcc_generated_files/interrupt_manager.h
+[; ;mcc_generated_files/interrupt_manager.h: 110: void INTERRUPT_Initialize (void);
+[v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
+"63 mcc_generated_files/spi.h
+[; ;mcc_generated_files/spi.h: 63: void SPI_Initialize(void);
+[v _SPI_Initialize `(v ~T0 @X0 0 ef ]
+"129 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 129: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"83 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 83: void OSCILLATOR_Initialize(void);
+"86 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 86: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
+"117 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 117: void EUSART_Initialize(void);
+[v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "6455 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 6455: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
@@ -461,30 +470,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _SYSTEM_Initialize ]
 [f ]
 "53
-[; ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
-[e ( _PIN_MANAGER_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 53:     INTERRUPT_Initialize();
+[e ( _INTERRUPT_Initialize ..  ]
 "54
-[; ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
+[; ;mcc_generated_files/mcc.c: 54:     SPI_Initialize();
+[e ( _SPI_Initialize ..  ]
 "55
-[; ;mcc_generated_files/mcc.c: 55: }
-[e :UE 305 ]
-}
+[; ;mcc_generated_files/mcc.c: 55:     PIN_MANAGER_Initialize();
+[e ( _PIN_MANAGER_Initialize ..  ]
+"56
+[; ;mcc_generated_files/mcc.c: 56:     OSCILLATOR_Initialize();
+[e ( _OSCILLATOR_Initialize ..  ]
 "57
-[; ;mcc_generated_files/mcc.c: 57: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+[; ;mcc_generated_files/mcc.c: 57:     EUSART_Initialize();
+[e ( _EUSART_Initialize ..  ]
 "58
-[; ;mcc_generated_files/mcc.c: 58: {
+[; ;mcc_generated_files/mcc.c: 58: }
+[e :UE 307 ]
+}
+"60
+[; ;mcc_generated_files/mcc.c: 60: void OSCILLATOR_Initialize(void)
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"61
+[; ;mcc_generated_files/mcc.c: 61: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"60
-[; ;mcc_generated_files/mcc.c: 60:     OSCCON = 0x30;
-[e = _OSCCON -> -> 48 `i `uc ]
-"62
-[; ;mcc_generated_files/mcc.c: 62:     OSCTUNE = 0x00;
-[e = _OSCTUNE -> -> 0 `i `uc ]
 "63
-[; ;mcc_generated_files/mcc.c: 63: }
-[e :UE 306 ]
+[; ;mcc_generated_files/mcc.c: 63:     OSCCON = 0x30;
+[e = _OSCCON -> -> 48 `i `uc ]
+"65
+[; ;mcc_generated_files/mcc.c: 65:     OSCTUNE = 0x00;
+[e = _OSCTUNE -> -> 0 `i `uc ]
+"66
+[; ;mcc_generated_files/mcc.c: 66: }
+[e :UE 308 ]
 }

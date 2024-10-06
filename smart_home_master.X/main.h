@@ -26,6 +26,7 @@ void Welcom(void);
 uint16 Set_Password(void);
 uint16 Read_Password_EEPROM(void);
 uint8 Check_Password(uint16 Password);
+uint8 Num_Indise_Home(void);
 
 #endif	/* MAIN_H */
 

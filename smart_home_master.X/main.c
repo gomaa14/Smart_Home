@@ -92,10 +92,11 @@ uint8 Program_Count = 0;
 static uint16 Password = 0;
 uint8 Password_text[6];
 uint8 password_check = PASSWORD_CHECK_FALSE;
+static uint8 Number_Of_pepeol = 0;
 
 void main(void)
 {
-    DATAEE_WriteByte(0x0000, 0xFF);
+    //DATAEE_WriteByte(0x0000, 0xFF);
     // Initialize the device
     SYSTEM_Initialize();
     APP_Init();
@@ -103,6 +104,8 @@ void main(void)
     Welcom();
     /* Address Zero in EEPROM Contain on Number of program count */
     Program_Count = DATAEE_ReadByte(0x0000);
+    /* Address 0x0001 in EEPROM Contain on Number of inside Home */
+    Number_Of_pepeol =  DATAEE_ReadByte(0x0001);
     
     if (Program_Count == 0xFF)
     {
@@ -125,8 +128,6 @@ void main(void)
     }
     
     DATAEE_WriteByte(0x0000, Program_Count);
-    
-    
     password_check = Check_Password(Password);
     
     while (1)
@@ -136,10 +137,19 @@ void main(void)
         {
             ret = lcd_4bit_send_command(&lcd1, _LCD_CLEAR_DISPLAY);
             ret = lcd_4bit_send_string_data_pos(&lcd1, 1, 1, "Correct Password");
+            if(EUSART_is_tx_ready())
+            {
+                EUSART_Write('Y');
+            }
             ret = led_on(&led_1);
             ret = dc_motor_move_right(&motor_1);
-            __delay_ms(5000);
+            __delay_ms(2500);
+            ret = dc_motor_move_left(&motor_1);
+            __delay_ms(2500);
             ret = dc_motor_stop(&motor_1);
+            ret = led_off(&led_1);
+            Number_Of_pepeol++;
+            DATAEE_WriteByte(0x0001, Number_Of_pepeol);
             password_check = PASSWORD_CHECK_Handel_CORRECT;
         }
         else if (password_check == PASSWORD_CHECK_FALSE )
@@ -150,10 +160,14 @@ void main(void)
             ret = led_off(&led_1);
             ret = dc_motor_stop(&motor_1);
             __delay_ms(2000);
+            
             password_check = Check_Password(Password);
         }
-        else{ /* Nothing*/}
-        
+        else if (password_check == PASSWORD_CHECK_Handel_CORRECT )
+        {
+            password_check = Check_Password(Password);
+        }
+        else{/* Nothing */}
         
     }
 }
@@ -247,7 +261,7 @@ uint8 Check_Password(uint16 Password)
         ret = keypad_get_value(&key1, &(Keypad_Value[l_Counter]));
         if (Keypad_Value[l_Counter] != 0)
         {
-            ret = lcd_4bit_send_string_data(&lcd1, &(Keypad_Value[l_Counter]));
+            ret = lcd_4bit_send_string_data(&lcd1, "*");
             l_Counter++;
             __delay_ms(250);
         }
@@ -269,3 +283,7 @@ uint8 Check_Password(uint16 Password)
     
 }
 
+uint8 Num_Indise_Home(void)
+{
+    return (DATAEE_ReadByte(0x0001) + 1);
+}

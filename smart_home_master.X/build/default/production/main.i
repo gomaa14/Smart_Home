@@ -4948,9 +4948,9 @@ unsigned char __t3rd16on(void);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 89 "./mcc_generated_files/pin_manager.h"
+# 129 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 101 "./mcc_generated_files/pin_manager.h"
+# 141 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
@@ -5120,6 +5120,28 @@ char *tempnam(const char *, const char *);
 # 8 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\conio.h" 2 3
 # 54 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 110 "./mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/spi.h" 1
+# 59 "./mcc_generated_files/spi.h"
+typedef enum {
+    SPI_DEFAULT
+} spi_modes_t;
+
+void SPI_Initialize(void);
+_Bool SPI_Open(spi_modes_t spiUniqueConfiguration);
+void SPI_Close(void);
+uint8_t SPI_ExchangeByte(uint8_t data);
+void SPI_ExchangeBlock(void *block, size_t blockSize);
+void SPI_WriteBlock(void *block, size_t blockSize);
+void SPI_ReadBlock(void *block, size_t blockSize);
+void SPI_WriteByte(uint8_t byte);
+uint8_t SPI_ReadByte(void);
+# 56 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/memory.h" 1
 # 99 "./mcc_generated_files/memory.h"
 uint8_t FLASH_ReadByte(uint32_t flashAddr);
@@ -5137,10 +5159,65 @@ void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
 uint8_t DATAEE_ReadByte(uint16_t bAdd);
 
 void MEMORY_Tasks(void);
-# 55 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/eusart.h" 1
+# 75 "./mcc_generated_files/eusart.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart_status_t;
+
+
+
+
+extern volatile uint8_t eusartTxBufferRemaining;
+extern volatile uint8_t eusartRxCount;
+
+
+
+
+extern void (*EUSART_TxDefaultInterruptHandler)(void);
+extern void (*EUSART_RxDefaultInterruptHandler)(void);
+# 117 "./mcc_generated_files/eusart.h"
+void EUSART_Initialize(void);
+# 165 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_ready(void);
+# 213 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_rx_ready(void);
+# 260 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_done(void);
+# 308 "./mcc_generated_files/eusart.h"
+eusart_status_t EUSART_get_last_status(void);
+# 328 "./mcc_generated_files/eusart.h"
+uint8_t EUSART_Read(void);
+# 348 "./mcc_generated_files/eusart.h"
+void EUSART_Write(uint8_t txData);
+# 369 "./mcc_generated_files/eusart.h"
+void EUSART_Transmit_ISR(void);
+# 390 "./mcc_generated_files/eusart.h"
+void EUSART_Receive_ISR(void);
+# 411 "./mcc_generated_files/eusart.h"
+void EUSART_RxDataHandler(void);
+# 429 "./mcc_generated_files/eusart.h"
+void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 447 "./mcc_generated_files/eusart.h"
+void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 465 "./mcc_generated_files/eusart.h"
+void EUSART_SetErrorHandler(void (* interruptHandler)(void));
+# 485 "./mcc_generated_files/eusart.h"
+void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
+# 505 "./mcc_generated_files/eusart.h"
+void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
+# 58 "./mcc_generated_files/mcc.h" 2
+# 73 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
+# 86 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 12 "./main.h" 2
 
@@ -5457,6 +5534,7 @@ void Welcom(void);
 uint16 Set_Password(void);
 uint16 Read_Password_EEPROM(void);
 uint8 Check_Password(uint16 Password);
+uint8 Num_Indise_Home(void);
 # 1 "main.c" 2
 
 
@@ -5552,10 +5630,11 @@ uint8 Program_Count = 0;
 static uint16 Password = 0;
 uint8 Password_text[6];
 uint8 password_check = 0x00;
+static uint8 Number_Of_pepeol = 0;
 
 void main(void)
 {
-    DATAEE_WriteByte(0x0000, 0xFF);
+
 
     SYSTEM_Initialize();
     APP_Init();
@@ -5563,6 +5642,8 @@ void main(void)
     Welcom();
 
     Program_Count = DATAEE_ReadByte(0x0000);
+
+    Number_Of_pepeol = DATAEE_ReadByte(0x0001);
 
     if (Program_Count == 0xFF)
     {
@@ -5585,8 +5666,6 @@ void main(void)
     }
 
     DATAEE_WriteByte(0x0000, Program_Count);
-
-
     password_check = Check_Password(Password);
 
     while (1)
@@ -5596,10 +5675,19 @@ void main(void)
         {
             ret = lcd_4bit_send_command(&lcd1, 0X01);
             ret = lcd_4bit_send_string_data_pos(&lcd1, 1, 1, "Correct Password");
+            if(EUSART_is_tx_ready())
+            {
+                EUSART_Write('Y');
+            }
             ret = led_on(&led_1);
             ret = dc_motor_move_right(&motor_1);
-            _delay((unsigned long)((5000)*(8000000/4000.0)));
+            _delay((unsigned long)((2500)*(8000000/4000.0)));
+            ret = dc_motor_move_left(&motor_1);
+            _delay((unsigned long)((2500)*(8000000/4000.0)));
             ret = dc_motor_stop(&motor_1);
+            ret = led_off(&led_1);
+            Number_Of_pepeol++;
+            DATAEE_WriteByte(0x0001, Number_Of_pepeol);
             password_check = 0x02;
         }
         else if (password_check == 0x00 )
@@ -5610,10 +5698,14 @@ void main(void)
             ret = led_off(&led_1);
             ret = dc_motor_stop(&motor_1);
             _delay((unsigned long)((2000)*(8000000/4000.0)));
+
+            password_check = Check_Password(Password);
+        }
+        else if (password_check == 0x02 )
+        {
             password_check = Check_Password(Password);
         }
         else{ }
-
 
     }
 }
@@ -5707,7 +5799,7 @@ uint8 Check_Password(uint16 Password)
         ret = keypad_get_value(&key1, &(Keypad_Value[l_Counter]));
         if (Keypad_Value[l_Counter] != 0)
         {
-            ret = lcd_4bit_send_string_data(&lcd1, &(Keypad_Value[l_Counter]));
+            ret = lcd_4bit_send_string_data(&lcd1, "*");
             l_Counter++;
             _delay((unsigned long)((250)*(8000000/4000.0)));
         }
@@ -5727,4 +5819,9 @@ uint8 Check_Password(uint16 Password)
 
     return Ret_value;
 
+}
+
+uint8 Num_Indise_Home(void)
+{
+    return (DATAEE_ReadByte(0x0001) + 1);
 }

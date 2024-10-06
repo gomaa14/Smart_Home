@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000002000000020000000083ffff0083ffffffffffffffffffffad020000090000004c050000d0020000</PLACEMENT>
+  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffffad020000090000004c050000d0020000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
-  <WINDOW type="default" module="DXP"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
    <POPUP w="800" x="68" flags="00000002" y="125" h="200" pid="0" iid="-1">
     <PROPERTIES>
-     <ITEM name="Message Column Width">550</ITEM>
+     <ITEM name="Message Column Width">671</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
      <ITEM name="Source Column Width">100</ITEM>
      <ITEM name="Time Column Width">120</ITEM>
@@ -67,7 +66,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="12" x="153" flags="0000800b" y="253" h="32" pid="6" iid="1">
+   <POPUP w="12" x="59" flags="0000000b" y="281" h="32" pid="6" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -112,15 +111,15 @@
    </POPUP>
    <POPUP w="600" x="278" flags="0000002a" y="282" h="400" pid="1" iid="1">
     <PROPERTIES>
-     <ITEM name="Breakpoint 0">"",2F22,0000,E5CC,D43A,-1
+     <ITEM name="Breakpoint 0">"",16A0,0000,22C3,D43A,1
 </ITEM>
      <ITEM name="Breakpoint 1">"",2F26,0000,44FA,D43A,1
 </ITEM>
-     <ITEM name="Breakpoint 2">"",363C,0000,92A6,D43A,1
+     <ITEM name="Breakpoint 2">"",363A,0000,92A6,D43A,1
 </ITEM>
      <ITEM name="Breakpoint 3">"",3048,0000,70CE,D43A,1
 </ITEM>
-     <ITEM name="Breakpoint 4">"",313E,0000,4B11,D43A,1
+     <ITEM name="Breakpoint 4">"",313E,0000,29BD,D43A,1
 </ITEM>
      <ITEM name="Breakpoint 5">"",2F3E,0000,11F2,D43A,1
 </ITEM>
@@ -134,7 +133,7 @@
      <ITEM name="DISPOPCODES">No</ITEM>
      <ITEM name="FIXUPBPTS">Yes</ITEM>
      <ITEM name="WordsOnly">No</ITEM>
-     <ITEM name="nBreakpoints">5</ITEM>
+     <ITEM name="nBreakpoints">1</ITEM>
     </PROPERTIES>
    </POPUP>
    <POPUP w="300" x="88" flags="0000000a" y="145" h="300" pid="2" iid="1">
@@ -152,6 +151,18 @@
      <ITEM name="Value Column Width">96</ITEM>
      <ITEM name="Version">100</ITEM>
      <ITEM name="nItems">0</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="450" x="68" flags="00000022" y="125" h="250" pid="0" iid="7">
+    <PROPERTIES>
+     <ITEM name="HSplitter1Pos">100</ITEM>
+     <ITEM name="VSplitter1Pos">238</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="450" x="0" flags="00000023" y="395" h="250" pid="0" iid="14">
+    <PROPERTIES>
+     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
   </PWI>

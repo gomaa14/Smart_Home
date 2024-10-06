@@ -42,14 +42,14 @@ PORTD_INDEX 3
 PORTE_INDEX 4
 ]
 "3 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
-[e E3273 . `uc
+[e E3341 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
 PORTC_INDEX 2
 PORTD_INDEX 3
 PORTE_INDEX 4
 ]
-[e E3263 . `uc
+[e E3331 . `uc
 PIN0 0
 PIN1 1
 PIN2 2
@@ -59,16 +59,16 @@ PIN5 5
 PIN6 6
 PIN7 7
 ]
-[e E3407 . `uc
+[e E3475 . `uc
 LED_OFF 0
 LED_ON 1
 ]
 "5
-[e E3255 . `uc
+[e E3323 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
 ]
-[e E3259 . `uc
+[e E3327 . `uc
 GPIO_OUTPUT 0
 GPIO_INPUT 1
 ]
@@ -81,6 +81,10 @@ GPIO_INPUT 1
 [e E3232 . `uc
 GPIO_LOW 0
 GPIO_HIGH 1
+]
+"72 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/spi.c
+[e E358 . `uc
+SPI_DEFAULT 0
 ]
 "4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -116,6 +120,8 @@ GPIO_HIGH 1
 [v _dc_motor_initialize dc_motor_initialize `(uc  1 e 1 0 ]
 "63
 [v _dc_motor_move_right dc_motor_move_right `(uc  1 e 1 0 ]
+"101
+[v _dc_motor_move_left dc_motor_move_left `(uc  1 e 1 0 ]
 "139
 [v _dc_motor_stop dc_motor_stop `(uc  1 e 1 0 ]
 "30 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/KEYPAD/ecu_keypad.c
@@ -174,21 +180,53 @@ GPIO_HIGH 1
 [v _gpio_port_direction_initialize gpio_port_direction_initialize `(uc  1 e 1 0 ]
 "305
 [v _gpio_port_write_logic gpio_port_write_logic `(uc  1 e 1 0 ]
-"96 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+"97 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"160
+"174
 [v _APP_Init APP_Init `(v  1 e 1 0 ]
-"168
+"182
 [v _Welcom Welcom `(v  1 e 1 0 ]
-"191
+"205
 [v _Set_Password Set_Password `(us  1 e 2 0 ]
-"220
+"234
 [v _Read_Password_EEPROM Read_Password_EEPROM `(us  1 e 2 0 ]
-"232
+"246
 [v _Check_Password Check_Password `(uc  1 e 1 0 ]
+"88 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"132
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(a  1 e 1 0 ]
+"173
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"197
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+"216
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+"240
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+"250
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"252
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"260
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"264
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"268
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"272
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"276
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+"280
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+"52 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"58
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 "50 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"57
+"60
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "59 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/memory.c
 [v _FLASH_ReadByte FLASH_ReadByte `(uc  1 e 1 0 ]
@@ -202,6 +240,10 @@ GPIO_HIGH 1
 [v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
 "55 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"62 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/spi.c
+[v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
+"92
+[v _SPI_ExchangeByte SPI_ExchangeByte `(uc  1 e 1 0 ]
 "345 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [v _WPUB WPUB `VEuc  1 e 1 @3964 ]
 "446
@@ -234,13 +276,66 @@ GPIO_HIGH 1
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "2476
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S1160 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"2508
+[s S1169 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S1178 . 1 `S1160 1 . 1 0 `S1169 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1178  1 e 1 @3988 ]
 "2698
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2920
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "3072
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
-[s S783 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[s S1402 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+"3164
+[s S1411 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+]
+[u S1415 . 1 `S1402 1 . 1 0 `S1411 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES1415  1 e 1 @3997 ]
+[s S1230 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"3241
+[s S1239 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S1243 . 1 `S1230 1 . 1 0 `S1239 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1243  1 e 1 @3998 ]
+[s S795 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 TMR3IF 1 0 :1:1 
 `uc 1 HLVDIF 1 0 :1:2 
 `uc 1 BCLIF 1 0 :1:3 
@@ -250,15 +345,15 @@ GPIO_HIGH 1
 `uc 1 OSCFIF 1 0 :1:7 
 ]
 "3478
-[s S792 . 1 `uc 1 . 1 0 :2:0 
+[s S804 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LVDIF 1 0 :1:2 
 ]
-[s S795 . 1 `uc 1 . 1 0 :6:0 
+[s S807 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CMIF 1 0 :1:6 
 ]
-[u S798 . 1 `S783 1 . 1 0 `S792 1 . 1 0 `S795 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES798  1 e 1 @4001 ]
-[s S747 . 1 `uc 1 RD 1 0 :1:0 
+[u S810 . 1 `S795 1 . 1 0 `S804 1 . 1 0 `S807 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES810  1 e 1 @4001 ]
+[s S759 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -268,11 +363,11 @@ GPIO_HIGH 1
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "3634
-[s S756 . 1 `uc 1 . 1 0 :6:0 
+[s S768 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S759 . 1 `S747 1 . 1 0 `S756 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES759  1 e 1 @4006 ]
+[u S771 . 1 `S759 1 . 1 0 `S768 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES771  1 e 1 @4006 ]
 "3679
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "3686
@@ -281,6 +376,128 @@ GPIO_HIGH 1
 [v _EEADR EEADR `VEuc  1 e 1 @4009 ]
 "3755
 [v _EEADRH EEADRH `VEuc  1 e 1 @4010 ]
+"3781
+[v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
+[s S1613 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3822
+[s S1622 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S1625 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S1628 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S1631 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S1634 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S1636 . 1 `S1613 1 . 1 0 `S1622 1 . 1 0 `S1625 1 . 1 0 `S1628 1 . 1 0 `S1631 1 . 1 0 `S1634 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES1636  1 e 1 @4011 ]
+"3991
+[v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+[s S1560 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"4030
+[s S1569 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S1578 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S1581 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S1583 . 1 `S1560 1 . 1 0 `S1569 1 . 1 0 `S1578 1 . 1 0 `S1581 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES1583  1 e 1 @4012 ]
+"4247
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"4259
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"4271
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"4283
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
+"4681
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
+"5341
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
+"5403
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+[s S1200 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"5423
+[s S1206 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S1211 . 1 `S1200 1 . 1 0 `S1206 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES1211  1 e 1 @4038 ]
+"5473
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+"5698
+[v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
+"5705
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+[s S1308 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"6067
+[s S1310 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S1313 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S1316 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S1319 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S1322 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S1331 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S1337 . 1 `S1308 1 . 1 0 `S1310 1 . 1 0 `S1313 1 . 1 0 `S1316 1 . 1 0 `S1319 1 . 1 0 `S1322 1 . 1 0 `S1331 1 . 1 0 ]
+[v _RCONbits RCONbits `VES1337  1 e 1 @4048 ]
 "6455
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 [s S593 . 1 `uc 1 . 1 0 :7:0 
@@ -359,13 +576,13 @@ GPIO_HIGH 1
 "36
 [s S29 . 8 `[4]S24 1 keypad_row_pins 4 0 `[4]S24 1 keypad_col_pins 4 4 ]
 [v _key1 key1 `S29  1 e 8 0 ]
-[s S913 . 1 `uc 1 dc_motor_port 1 0 :4:0 
+[s S925 . 1 `uc 1 dc_motor_port 1 0 :4:0 
 `uc 1 dc_motor_pin 1 0 :3:4 
 `uc 1 motor_status 1 0 :1:7 
 ]
 "80
-[s S917 . 2 `[2]S913 1 dc_motor 2 0 ]
-[v _motor_1 motor_1 `S917  1 e 2 0 ]
+[s S929 . 2 `[2]S925 1 dc_motor 2 0 ]
+[v _motor_1 motor_1 `S929  1 e 2 0 ]
 "89
 [v _ret ret `uc  1 e 1 0 ]
 "91
@@ -374,10 +591,51 @@ GPIO_HIGH 1
 [v _Password Password `us  1 s 2 Password ]
 "94
 [v _password_check password_check `uc  1 e 1 0 ]
-"96
+"95
+[v _Number_Of_pepeol Number_Of_pepeol `uc  1 s 1 Number_Of_pepeol ]
+"62 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/eusart.c
+[v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
+"63
+[v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
+"64
+[v _eusartTxBuffer eusartTxBuffer `VE[8]uc  1 e 8 0 ]
+"65
+[v _eusartTxBufferRemaining eusartTxBufferRemaining `VEuc  1 e 1 0 ]
+"67
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"69
+[v _eusartRxBuffer eusartRxBuffer `VE[8]uc  1 e 8 0 ]
+[s S1475 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"70
+[u S1480 . 1 `S1475 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S1480  1 e 8 0 ]
+"71
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"72
+[v _eusartRxLastError eusartRxLastError `VES1480  1 e 1 0 ]
+"77
+[v _EUSART_TxDefaultInterruptHandler EUSART_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"78
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"80
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"81
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"82
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+[s S1152 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
+"58 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/spi.c
+[v _spi_configuration spi_configuration `C[1]S1152  1 s 4 spi_configuration ]
+"97 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"159
+"173
 } 0
 "51 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LED/ecu_led.c
 [v _led_on led_on `(uc  1 e 1 0 ]
@@ -388,15 +646,15 @@ GPIO_HIGH 1
 `uc 1 Direction 1 0 :1:7 
 ]
 "62
-[v led_on@pin_obj pin_obj `S24  1 a 1 11 ]
+[v led_on@pin_obj pin_obj `S24  1 a 1 15 ]
 "53
-[v led_on@ret ret `uc  1 a 1 10 ]
+[v led_on@ret ret `uc  1 a 1 14 ]
 [s S408 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin_name 1 0 :3:4 
 `uc 1 led_state 1 0 :1:7 
 ]
 "51
-[v led_on@led led `*.30CS408  1 p 1 8 ]
+[v led_on@led led `*.30CS408  1 p 1 12 ]
 "75
 } 0
 "84
@@ -408,15 +666,15 @@ GPIO_HIGH 1
 `uc 1 Direction 1 0 :1:7 
 ]
 "94
-[v led_off@pin_obj pin_obj `S24  1 a 1 11 ]
+[v led_off@pin_obj pin_obj `S24  1 a 1 15 ]
 "86
-[v led_off@ret ret `uc  1 a 1 10 ]
+[v led_off@ret ret `uc  1 a 1 14 ]
 [s S408 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin_name 1 0 :3:4 
 `uc 1 led_state 1 0 :1:7 
 ]
 "84
-[v led_off@led led `*.30CS408  1 p 1 8 ]
+[v led_off@led led `*.30CS408  1 p 1 12 ]
 "104
 } 0
 "139 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/DC_MOTOR/ecu_dc_motor.c
@@ -428,18 +686,18 @@ GPIO_HIGH 1
 `uc 1 Direction 1 0 :1:7 
 ]
 "156
-[v dc_motor_stop@pin_2 pin_2 `S24  1 a 1 12 ]
+[v dc_motor_stop@pin_2 pin_2 `S24  1 a 1 16 ]
 "150
-[v dc_motor_stop@pin_1 pin_1 `S24  1 a 1 11 ]
+[v dc_motor_stop@pin_1 pin_1 `S24  1 a 1 15 ]
 "141
-[v dc_motor_stop@ret ret `uc  1 a 1 10 ]
-[s S913 . 1 `uc 1 dc_motor_port 1 0 :4:0 
+[v dc_motor_stop@ret ret `uc  1 a 1 14 ]
+[s S925 . 1 `uc 1 dc_motor_port 1 0 :4:0 
 `uc 1 dc_motor_pin 1 0 :3:4 
 `uc 1 motor_status 1 0 :1:7 
 ]
 "139
-[s S917 . 2 `[2]S913 1 dc_motor 2 0 ]
-[v dc_motor_stop@obj obj `*.30CS917  1 p 1 8 ]
+[s S929 . 2 `[2]S925 1 dc_motor 2 0 ]
+[v dc_motor_stop@obj obj `*.30CS929  1 p 1 12 ]
 "168
 } 0
 "63
@@ -451,96 +709,177 @@ GPIO_HIGH 1
 `uc 1 Direction 1 0 :1:7 
 ]
 "80
-[v dc_motor_move_right@pin_2 pin_2 `S24  1 a 1 12 ]
+[v dc_motor_move_right@pin_2 pin_2 `S24  1 a 1 16 ]
 "74
-[v dc_motor_move_right@pin_1 pin_1 `S24  1 a 1 11 ]
+[v dc_motor_move_right@pin_1 pin_1 `S24  1 a 1 15 ]
 "65
-[v dc_motor_move_right@ret ret `uc  1 a 1 10 ]
-[s S913 . 1 `uc 1 dc_motor_port 1 0 :4:0 
+[v dc_motor_move_right@ret ret `uc  1 a 1 14 ]
+[s S925 . 1 `uc 1 dc_motor_port 1 0 :4:0 
 `uc 1 dc_motor_pin 1 0 :3:4 
 `uc 1 motor_status 1 0 :1:7 
 ]
 "63
-[s S917 . 2 `[2]S913 1 dc_motor 2 0 ]
-[v dc_motor_move_right@obj obj `*.30CS917  1 p 1 8 ]
+[s S929 . 2 `[2]S925 1 dc_motor 2 0 ]
+[v dc_motor_move_right@obj obj `*.30CS929  1 p 1 12 ]
 "92
 } 0
-"168 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+"101
+[v _dc_motor_move_left dc_motor_move_left `(uc  1 e 1 0 ]
+{
+[s S24 . 1 `uc 1 Pin 1 0 :3:0 
+`uc 1 Port 1 0 :3:3 
+`uc 1 Logic 1 0 :1:6 
+`uc 1 Direction 1 0 :1:7 
+]
+"118
+[v dc_motor_move_left@pin_2 pin_2 `S24  1 a 1 16 ]
+"112
+[v dc_motor_move_left@pin_1 pin_1 `S24  1 a 1 15 ]
+"103
+[v dc_motor_move_left@ret ret `uc  1 a 1 14 ]
+[s S925 . 1 `uc 1 dc_motor_port 1 0 :4:0 
+`uc 1 dc_motor_pin 1 0 :3:4 
+`uc 1 motor_status 1 0 :1:7 
+]
+"101
+[s S929 . 2 `[2]S925 1 dc_motor 2 0 ]
+[v dc_motor_move_left@obj obj `*.30CS929  1 p 1 12 ]
+"130
+} 0
+"182 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
 [v _Welcom Welcom `(v  1 e 1 0 ]
 {
-"170
-[v Welcom@l_welcom_counter l_welcom_counter `uc  1 a 1 26 ]
-"189
+"184
+[v Welcom@l_welcom_counter l_welcom_counter `uc  1 a 1 28 ]
+"203
 } 0
-"191
+"205
 [v _Set_Password Set_Password `(us  1 e 2 0 ]
 {
-"195
-[v Set_Password@Keypad_Value Keypad_Value `[4]uc  1 a 4 41 ]
-"193
-[v Set_Password@Return_Value Return_Value `us  1 a 2 39 ]
-"194
-[v Set_Password@l_Counter l_Counter `uc  1 a 1 45 ]
-"218
+"209
+[v Set_Password@Keypad_Value Keypad_Value `[4]uc  1 a 4 2 ]
+"207
+[v Set_Password@Return_Value Return_Value `us  1 a 2 0 ]
+"208
+[v Set_Password@l_Counter l_Counter `uc  1 a 1 6 ]
+"232
 } 0
 "50 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"55
+"58
+} 0
+"62 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/spi.c
+[v _SPI_Initialize SPI_Initialize `(v  1 e 1 0 ]
+{
+"70
 } 0
 "55 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "94
 } 0
-"57 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/mcc.c
+"60 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"63
+"66
 } 0
-"220 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+"52 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"88 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"130
+} 0
+"276
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 4 ]
+"278
+} 0
+"280
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 4 ]
+"282
+} 0
+"268
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 4 ]
+"270
+} 0
+"264
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 4 ]
+"266
+} 0
+"272
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 4 ]
+"274
+} 0
+"234 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
 [v _Read_Password_EEPROM Read_Password_EEPROM `(us  1 e 2 0 ]
 {
-"222
-[v Read_Password_EEPROM@Return_Value Return_Value `us  1 a 2 7 ]
-"230
+"236
+[v Read_Password_EEPROM@Return_Value Return_Value `us  1 a 2 11 ]
+"244
 } 0
 "196 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/memory.c
 [v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
 {
-[v DATAEE_ReadByte@bAdd bAdd `us  1 p 2 0 ]
+[v DATAEE_ReadByte@bAdd bAdd `us  1 p 2 4 ]
 "207
 } 0
+"132 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/eusart.c
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(a  1 e 1 0 ]
+{
+"135
+} 0
 "173
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 4 ]
+"194
+} 0
+"173 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/memory.c
 [v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
 {
 "175
-[v DATAEE_WriteByte@GIEBitValue GIEBitValue `uc  1 a 1 3 ]
+[v DATAEE_WriteByte@GIEBitValue GIEBitValue `uc  1 a 1 7 ]
 "173
-[v DATAEE_WriteByte@bAdd bAdd `us  1 p 2 0 ]
-[v DATAEE_WriteByte@bData bData `uc  1 p 1 2 ]
+[v DATAEE_WriteByte@bAdd bAdd `us  1 p 2 4 ]
+[v DATAEE_WriteByte@bData bData `uc  1 p 1 6 ]
 "194
 } 0
-"232 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+"246 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
 [v _Check_Password Check_Password `(uc  1 e 1 0 ]
 {
-"236
-[v Check_Password@Keypad_Value Keypad_Value `[4]uc  1 a 4 42 ]
-"234
-[v Check_Password@Enter_Password Enter_Password `us  1 a 2 39 ]
-"237
-[v Check_Password@l_Counter l_Counter `uc  1 a 1 46 ]
-"235
-[v Check_Password@Ret_value Ret_value `uc  1 a 1 41 ]
-"232
-[v Check_Password@Password Password `us  1 p 2 29 ]
-"270
+"250
+[v Check_Password@Keypad_Value Keypad_Value `[4]uc  1 a 4 2 ]
+"248
+[v Check_Password@Enter_Password Enter_Password `us  1 a 2 0 ]
+"251
+[v Check_Password@l_Counter l_Counter `uc  1 a 1 7 ]
+"249
+[v Check_Password@Ret_value Ret_value `uc  1 a 1 6 ]
+"246
+[v Check_Password@Password Password `us  1 p 2 32 ]
+"284
 } 0
 "260 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LCD/ecu_chr_lcd.c
 [v _lcd_4bit_send_string_data_pos lcd_4bit_send_string_data_pos `(uc  1 e 1 0 ]
 {
 "263
-[v lcd_4bit_send_string_data_pos@Ret Ret `uc  1 a 1 28 ]
+[v lcd_4bit_send_string_data_pos@Ret Ret `uc  1 a 1 31 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -548,17 +887,17 @@ GPIO_HIGH 1
 ]
 "260
 [s S88 . 6 `[4]S24 1 lcd_data 4 0 `S24 1 lcd_rs 1 4 `S24 1 lcd_en 1 5 ]
-[v lcd_4bit_send_string_data_pos@lcd lcd `*.30CS88  1 p 1 24 ]
-[v lcd_4bit_send_string_data_pos@row row `uc  1 p 1 25 ]
-[v lcd_4bit_send_string_data_pos@coulmn coulmn `uc  1 p 1 26 ]
-[v lcd_4bit_send_string_data_pos@str_data str_data `*.31uc  1 p 1 27 ]
+[v lcd_4bit_send_string_data_pos@lcd lcd `*.30CS88  1 p 1 27 ]
+[v lcd_4bit_send_string_data_pos@row row `uc  1 p 1 28 ]
+[v lcd_4bit_send_string_data_pos@coulmn coulmn `uc  1 p 1 29 ]
+[v lcd_4bit_send_string_data_pos@str_data str_data `*.31uc  1 p 1 30 ]
 "284
 } 0
 "1021
 [v _lcd_4bit_set_cursor lcd_4bit_set_cursor `(uc  1 s 1 lcd_4bit_set_cursor ]
 {
 "1024
-[v lcd_4bit_set_cursor@Ret Ret `uc  1 a 1 22 ]
+[v lcd_4bit_set_cursor@Ret Ret `uc  1 a 1 26 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -566,18 +905,18 @@ GPIO_HIGH 1
 ]
 "1021
 [s S88 . 6 `[4]S24 1 lcd_data 4 0 `S24 1 lcd_rs 1 4 `S24 1 lcd_en 1 5 ]
-[v lcd_4bit_set_cursor@lcd lcd `*.30CS88  1 p 1 17 ]
-[v lcd_4bit_set_cursor@row row `uc  1 p 1 18 ]
-[v lcd_4bit_set_cursor@coulmn coulmn `uc  1 p 1 19 ]
+[v lcd_4bit_set_cursor@lcd lcd `*.30CS88  1 p 1 21 ]
+[v lcd_4bit_set_cursor@row row `uc  1 p 1 22 ]
+[v lcd_4bit_set_cursor@coulmn coulmn `uc  1 p 1 23 ]
 "1054
 } 0
 "223
 [v _lcd_4bit_send_string_data lcd_4bit_send_string_data `(uc  1 e 1 0 ]
 {
 "235
-[v lcd_4bit_send_string_data@l_counter l_counter `uc  1 a 1 23 ]
+[v lcd_4bit_send_string_data@l_counter l_counter `uc  1 a 1 25 ]
 "226
-[v lcd_4bit_send_string_data@Ret Ret `uc  1 a 1 22 ]
+[v lcd_4bit_send_string_data@Ret Ret `uc  1 a 1 24 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -585,15 +924,15 @@ GPIO_HIGH 1
 ]
 "223
 [s S88 . 6 `[4]S24 1 lcd_data 4 0 `S24 1 lcd_rs 1 4 `S24 1 lcd_en 1 5 ]
-[v lcd_4bit_send_string_data@lcd lcd `*.30CS88  1 p 1 17 ]
-[v lcd_4bit_send_string_data@str_data str_data `*.35uc  1 p 2 18 ]
+[v lcd_4bit_send_string_data@lcd lcd `*.30CS88  1 p 1 21 ]
+[v lcd_4bit_send_string_data@str_data str_data `*.31uc  1 p 1 22 ]
 "248
 } 0
 "140
 [v _lcd_4bit_send_char_data lcd_4bit_send_char_data `(uc  1 e 1 0 ]
 {
 "143
-[v lcd_4bit_send_char_data@Ret Ret `uc  1 a 1 16 ]
+[v lcd_4bit_send_char_data@Ret Ret `uc  1 a 1 20 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -601,22 +940,22 @@ GPIO_HIGH 1
 ]
 "140
 [s S88 . 6 `[4]S24 1 lcd_data 4 0 `S24 1 lcd_rs 1 4 `S24 1 lcd_en 1 5 ]
-[v lcd_4bit_send_char_data@lcd lcd `*.30CS88  1 p 1 14 ]
-[v lcd_4bit_send_char_data@data data `uc  1 p 1 15 ]
+[v lcd_4bit_send_char_data@lcd lcd `*.30CS88  1 p 1 18 ]
+[v lcd_4bit_send_char_data@data data `uc  1 p 1 19 ]
 "177
 } 0
 "68 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/KEYPAD/ecu_keypad.c
 [v _keypad_get_value keypad_get_value `(uc  1 e 1 0 ]
 {
 "78
-[v keypad_get_value@cols_counter cols_counter `uc  1 a 1 15 ]
-[v keypad_get_value@rows_counter rows_counter `uc  1 a 1 14 ]
+[v keypad_get_value@cols_counter cols_counter `uc  1 a 1 19 ]
+[v keypad_get_value@rows_counter rows_counter `uc  1 a 1 18 ]
 "79
-[v keypad_get_value@count count `uc  1 a 1 13 ]
+[v keypad_get_value@count count `uc  1 a 1 17 ]
 "80
-[v keypad_get_value@column_logic column_logic `E3232  1 a 1 12 ]
+[v keypad_get_value@column_logic column_logic `E3232  1 a 1 16 ]
 "70
-[v keypad_get_value@ret ret `uc  1 a 1 11 ]
+[v keypad_get_value@ret ret `uc  1 a 1 15 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -624,39 +963,39 @@ GPIO_HIGH 1
 ]
 "68
 [s S29 . 8 `[4]S24 1 keypad_row_pins 4 0 `[4]S24 1 keypad_col_pins 4 4 ]
-[v keypad_get_value@obj obj `*.30CS29  1 p 1 8 ]
-[v keypad_get_value@value value `*.30uc  1 p 1 9 ]
+[v keypad_get_value@obj obj `*.30CS29  1 p 1 12 ]
+[v keypad_get_value@value value `*.30uc  1 p 1 13 ]
 "110
 } 0
 "162 D:\lap_interface\project\Smart_Home\smart_home_master.X\HAL/GPIO/hal_gpio.c
 [v _gpio_pin_read_logic gpio_pin_read_logic `(uc  1 e 1 0 ]
 {
 "164
-[v gpio_pin_read_logic@Ret Ret `uc  1 a 1 6 ]
+[v gpio_pin_read_logic@Ret Ret `uc  1 a 1 10 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
 `uc 1 Direction 1 0 :1:7 
 ]
 "162
-[v gpio_pin_read_logic@pin_config pin_config `*.30CS24  1 p 1 0 ]
-[v gpio_pin_read_logic@logic logic `*.30E3232  1 p 1 1 ]
+[v gpio_pin_read_logic@pin_config pin_config `*.30CS24  1 p 1 4 ]
+[v gpio_pin_read_logic@logic logic `*.30E3232  1 p 1 5 ]
 "181
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___wmul@product product `ui  1 a 2 4 ]
+[v ___wmul@product product `ui  1 a 2 8 ]
 "15
-[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+[v ___wmul@multiplier multiplier `ui  1 p 2 4 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 6 ]
 "53
 } 0
-"160 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
+"174 D:\lap_interface\project\Smart_Home\smart_home_master.X\main.c
 [v _APP_Init APP_Init `(v  1 e 1 0 ]
 {
-"167
+"181
 } 0
 "20 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LED/ecu_led.c
 [v _led_initialize led_initialize `(uc  1 e 1 0 ]
@@ -667,24 +1006,24 @@ GPIO_HIGH 1
 `uc 1 Direction 1 0 :1:7 
 ]
 "30
-[v led_initialize@pin_obj pin_obj `S24  1 a 1 14 ]
+[v led_initialize@pin_obj pin_obj `S24  1 a 1 18 ]
 "22
-[v led_initialize@ret ret `uc  1 a 1 13 ]
+[v led_initialize@ret ret `uc  1 a 1 17 ]
 [s S408 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin_name 1 0 :3:4 
 `uc 1 led_state 1 0 :1:7 
 ]
 "20
-[v led_initialize@led led `*.30CS408  1 p 1 11 ]
+[v led_initialize@led led `*.30CS408  1 p 1 15 ]
 "42
 } 0
 "32 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/LCD/ecu_chr_lcd.c
 [v _lcd_4bit_initialze lcd_4bit_initialze `(uc  1 e 1 0 ]
 {
 "34
-[v lcd_4bit_initialze@Ret Ret `uc  1 a 1 20 ]
+[v lcd_4bit_initialze@Ret Ret `uc  1 a 1 24 ]
 "35
-[v lcd_4bit_initialze@l_counter l_counter `uc  1 a 1 19 ]
+[v lcd_4bit_initialze@l_counter l_counter `uc  1 a 1 23 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -692,14 +1031,14 @@ GPIO_HIGH 1
 ]
 "32
 [s S88 . 6 `[4]S24 1 lcd_data 4 0 `S24 1 lcd_rs 1 4 `S24 1 lcd_en 1 5 ]
-[v lcd_4bit_initialze@lcd lcd `*.30CS88  1 p 1 17 ]
+[v lcd_4bit_initialze@lcd lcd `*.30CS88  1 p 1 21 ]
 "80
 } 0
 "91
 [v _lcd_4bit_send_command lcd_4bit_send_command `(uc  1 e 1 0 ]
 {
 "94
-[v lcd_4bit_send_command@Ret Ret `uc  1 a 1 16 ]
+[v lcd_4bit_send_command@Ret Ret `uc  1 a 1 20 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -707,17 +1046,17 @@ GPIO_HIGH 1
 ]
 "91
 [s S88 . 6 `[4]S24 1 lcd_data 4 0 `S24 1 lcd_rs 1 4 `S24 1 lcd_en 1 5 ]
-[v lcd_4bit_send_command@lcd lcd `*.30CS88  1 p 1 14 ]
-[v lcd_4bit_send_command@command command `uc  1 p 1 15 ]
+[v lcd_4bit_send_command@lcd lcd `*.30CS88  1 p 1 18 ]
+[v lcd_4bit_send_command@command command `uc  1 p 1 19 ]
 "129
 } 0
 "844
 [v _lcd_send_4bit lcd_send_4bit `(uc  1 s 1 lcd_send_4bit ]
 {
 "848
-[v lcd_send_4bit@l_counter l_counter `uc  1 a 1 13 ]
+[v lcd_send_4bit@l_counter l_counter `uc  1 a 1 17 ]
 "847
-[v lcd_send_4bit@Ret Ret `uc  1 a 1 12 ]
+[v lcd_send_4bit@Ret Ret `uc  1 a 1 16 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -725,15 +1064,15 @@ GPIO_HIGH 1
 ]
 "844
 [s S88 . 6 `[4]S24 1 lcd_data 4 0 `S24 1 lcd_rs 1 4 `S24 1 lcd_en 1 5 ]
-[v lcd_send_4bit@lcd lcd `*.30CS88  1 p 1 8 ]
-[v lcd_send_4bit@value value `uc  1 p 1 9 ]
+[v lcd_send_4bit@lcd lcd `*.30CS88  1 p 1 12 ]
+[v lcd_send_4bit@value value `uc  1 p 1 13 ]
 "868
 } 0
 "878
 [v _lcd_4bit_send_enable_signal lcd_4bit_send_enable_signal `(uc  1 s 1 lcd_4bit_send_enable_signal ]
 {
 "881
-[v lcd_4bit_send_enable_signal@Ret Ret `uc  1 a 1 9 ]
+[v lcd_4bit_send_enable_signal@Ret Ret `uc  1 a 1 13 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -741,17 +1080,17 @@ GPIO_HIGH 1
 ]
 "878
 [s S88 . 6 `[4]S24 1 lcd_data 4 0 `S24 1 lcd_rs 1 4 `S24 1 lcd_en 1 5 ]
-[v lcd_4bit_send_enable_signal@lcd lcd `*.30CS88  1 p 1 8 ]
+[v lcd_4bit_send_enable_signal@lcd lcd `*.30CS88  1 p 1 12 ]
 "901
 } 0
 "30 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/KEYPAD/ecu_keypad.c
 [v _keypad_initialize keypad_initialize `(uc  1 e 1 0 ]
 {
 "40
-[v keypad_initialize@num_col num_col `uc  1 a 1 14 ]
-[v keypad_initialize@num_row num_row `uc  1 a 1 13 ]
+[v keypad_initialize@num_col num_col `uc  1 a 1 18 ]
+[v keypad_initialize@num_row num_row `uc  1 a 1 17 ]
 "32
-[v keypad_initialize@ret ret `uc  1 a 1 12 ]
+[v keypad_initialize@ret ret `uc  1 a 1 16 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
@@ -759,7 +1098,7 @@ GPIO_HIGH 1
 ]
 "30
 [s S29 . 8 `[4]S24 1 keypad_row_pins 4 0 `[4]S24 1 keypad_col_pins 4 4 ]
-[v keypad_initialize@obj obj `*.30CS29  1 p 1 11 ]
+[v keypad_initialize@obj obj `*.30CS29  1 p 1 15 ]
 "58
 } 0
 "21 D:\lap_interface\project\Smart_Home\smart_home_master.X\ECU/DC_MOTOR/ecu_dc_motor.c
@@ -771,60 +1110,94 @@ GPIO_HIGH 1
 `uc 1 Direction 1 0 :1:7 
 ]
 "41
-[v dc_motor_initialize@pin_2 pin_2 `S24  1 a 1 15 ]
+[v dc_motor_initialize@pin_2 pin_2 `S24  1 a 1 19 ]
 "32
-[v dc_motor_initialize@pin_1 pin_1 `S24  1 a 1 14 ]
+[v dc_motor_initialize@pin_1 pin_1 `S24  1 a 1 18 ]
 "23
-[v dc_motor_initialize@ret ret `uc  1 a 1 13 ]
-[s S913 . 1 `uc 1 dc_motor_port 1 0 :4:0 
+[v dc_motor_initialize@ret ret `uc  1 a 1 17 ]
+[s S925 . 1 `uc 1 dc_motor_port 1 0 :4:0 
 `uc 1 dc_motor_pin 1 0 :3:4 
 `uc 1 motor_status 1 0 :1:7 
 ]
 "21
-[s S917 . 2 `[2]S913 1 dc_motor 2 0 ]
-[v dc_motor_initialize@obj obj `*.30CS917  1 p 1 11 ]
+[s S929 . 2 `[2]S925 1 dc_motor 2 0 ]
+[v dc_motor_initialize@obj obj `*.30CS929  1 p 1 15 ]
 "53
 } 0
 "219 D:\lap_interface\project\Smart_Home\smart_home_master.X\HAL/GPIO/hal_gpio.c
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
 {
 "221
-[v gpio_pin_initialize@Ret Ret `uc  1 a 1 10 ]
+[v gpio_pin_initialize@Ret Ret `uc  1 a 1 14 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
 `uc 1 Direction 1 0 :1:7 
 ]
 "219
-[v gpio_pin_initialize@pin_config pin_config `*.30CS24  1 p 1 8 ]
+[v gpio_pin_initialize@pin_config pin_config `*.30CS24  1 p 1 12 ]
 "237
 } 0
 "118
 [v _gpio_pin_write_logic gpio_pin_write_logic `(uc  1 e 1 0 ]
 {
 "120
-[v gpio_pin_write_logic@Ret Ret `uc  1 a 1 7 ]
+[v gpio_pin_write_logic@Ret Ret `uc  1 a 1 11 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
 `uc 1 Direction 1 0 :1:7 
 ]
 "118
-[v gpio_pin_write_logic@pin_config pin_config `*.30CS24  1 p 1 0 ]
-[v gpio_pin_write_logic@logic logic `E3232  1 p 1 1 ]
+[v gpio_pin_write_logic@pin_config pin_config `*.30CS24  1 p 1 4 ]
+[v gpio_pin_write_logic@logic logic `E3232  1 p 1 5 ]
 "152
 } 0
 "41
 [v _gpio_pin_direction_initialize gpio_pin_direction_initialize `(uc  1 e 1 0 ]
 {
 "43
-[v gpio_pin_direction_initialize@Ret Ret `uc  1 a 1 6 ]
+[v gpio_pin_direction_initialize@Ret Ret `uc  1 a 1 10 ]
 [s S24 . 1 `uc 1 Pin 1 0 :3:0 
 `uc 1 Port 1 0 :3:3 
 `uc 1 Logic 1 0 :1:6 
 `uc 1 Direction 1 0 :1:7 
 ]
 "41
-[v gpio_pin_direction_initialize@pin_config pin_config `*.30CS24  1 p 1 0 ]
+[v gpio_pin_direction_initialize@pin_config pin_config `*.30CS24  1 p 1 4 ]
 "77
+} 0
+"58 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"80
+} 0
+"197 D:\lap_interface\project\Smart_Home\smart_home_master.X\mcc_generated_files/eusart.c
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+{
+"214
+} 0
+"216
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+{
+"238
+} 0
+"252
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+{
+"258
+} 0
+"250
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+{
+} 0
+"260
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+{
+"262
+} 0
+"240
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+{
+"248
 } 0

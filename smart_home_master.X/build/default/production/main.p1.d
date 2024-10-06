@@ -4,7 +4,10 @@ main.h  \
 mcc_generated_files/mcc.h  \
 mcc_generated_files/device_config.h  \
 mcc_generated_files/pin_manager.h  \
+mcc_generated_files/interrupt_manager.h  \
+mcc_generated_files/spi.h  \
 mcc_generated_files/memory.h  \
+mcc_generated_files/eusart.h  \
 ECU/KEYPAD/ecu_keypad.h  \
 ECU/KEYPAD/../../HAL/GPIO/hal_gpio.h  \
 ECU/KEYPAD/../../HAL/GPIO/../mcal_std_types.h  \
